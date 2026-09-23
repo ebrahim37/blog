@@ -1,0 +1,46 @@
+<style>
+	* {
+		margin: 0
+	}
+
+	.horiz:after,
+	.vert:after {
+		content: "";
+		position: absolute;
+		z-index: -1
+	}
+
+	.horiz:after {
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		border-left: 2px solid red;
+		transform: translate(-50%)
+	}
+
+	.vert:after {
+		left: 0;
+		right: 0;
+		top: 50%;
+		border-top: 2px solid red;
+		transform: translate(0, -50%)
+	}
+</style>
+
+<div class="horiz"></div>
+<div class="vert"></div>
+
+<script>
+	window.onload = () => {
+		const p = document.createElement("p");
+		document.body.appendChild(p);
+		const updateDimensions = () => {
+			const width = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+			const height = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+			p.textContent = width + 'x' + height;
+		};
+		updateDimensions();
+		window.addEventListener('resize', updateDimensions, false);
+		window.addEventListener('orientationchange', updateDimensions, false);
+	};
+</script>
