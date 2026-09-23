@@ -19,7 +19,7 @@ const PROJECTS: Project[] = [
 	},
 	{
 		name: 'nixos-configs',
-		description: 'Reproducible NixOS virtual-machine configurations tuned for QEMU on Windows and UTM on Apple silicon.',
+		description: 'NixOS configs for high-performance QEMU VMs running on Windows 11 and macOS.',
 		technologies: ['NixOS', 'Nix flakes', 'Home Manager', 'QEMU'],
 		href: 'https://github.com/ebrahim37/nixos-configs',
 	},
