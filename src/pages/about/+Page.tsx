@@ -70,7 +70,7 @@ export function Page() {
 				<section>
 					<h2 class='content-heading'>This site</h2>
 					<p>
-						This site is built with <a class='text-link' href='https://www.solidjs.com/' target='_blank' rel='noreferrer' translate='no'>SolidJS</a>, <a class='text-link' href='https://vike.dev/' target='_blank' rel='noreferrer' translate='no'>Vike</a>, and <a class='text-link' href='https://tailwindcss.com/' target='_blank' rel='noreferrer' translate='no'>Tailwind CSS</a>. It is generated as a static site and deployed with <a class='text-link' href='https://pages.github.com/' target='_blank' rel='noreferrer'>GitHub Pages</a>. Its visual design is inspired by <a class='text-link' href='https://maxleiter.com/' target='_blank' rel='noreferrer'>Max Leiter’s website</a>. You can view the source <a class='text-link' href='https://github.com/ebrahim37/ebrahim37.github.io' target='_blank' rel='noreferrer'>here</a>.
+						This site is built with <a class='text-link' href='https://www.solidjs.com/' target='_blank' rel='noreferrer' translate='no'>SolidJS</a>, <a class='text-link' href='https://vike.dev/' target='_blank' rel='noreferrer' translate='no'>Vike</a>, and <a class='text-link' href='https://tailwindcss.com/' target='_blank' rel='noreferrer' translate='no'>Tailwind CSS</a>. It is generated as a static site and deployed with Cloudflare Pages. Its visual design is inspired by <a class='text-link' href='https://maxleiter.com/' target='_blank' rel='noreferrer'>Max Leiter’s website</a>. You can view the source <a class='text-link' href='https://github.com/ebrahim37/blog' target='_blank' rel='noreferrer'>here</a>.
 					</p>
 				</section>
 			</div>
