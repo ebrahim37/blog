@@ -13,7 +13,7 @@ type Project = {
 const PROJECTS: Project[] = [
 	{
 		name: 'infra-template',
-		description: 'Declarative Fedora CoreOS host configurations using Butane, Ignition, and Podman Quadlet service stacks.',
+		description: 'Declarative Fedora CoreOS server configurations using Butane/Ignition and Podman Quadlets.',
 		technologies: ['Fedora CoreOS', 'Butane', 'Podman', 'Quadlet'],
 		href: 'https://github.com/ebrahim37/infra-template',
 	},
