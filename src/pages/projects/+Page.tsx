@@ -72,18 +72,6 @@ const PROJECTS: Project[] = [
 		href: 'https://github.com/ebrahim37/steganography',
 	},
 	{
-		name: 'graphical-maze-solver',
-		description: 'The original desktop maze solver, visualizing Dijkstra’s algorithm over black-and-white maze images.',
-		technologies: ['C++', 'Dear ImGui', 'DirectX 9'],
-		href: 'https://github.com/ebrahim37/graphical-maze-solver',
-	},
-	{
-		name: 'linux-rpm-wpm',
-		description: 'A Linux kernel module for reading and writing the memory of another process from kernel mode.',
-		technologies: ['C++', 'Linux kernel'],
-		href: 'https://github.com/ebrahim37/linux-rpm-wpm',
-	},
-	{
 		name: 'R6 external ESP',
 		description: 'An external Rainbow Six Siege overlay from the reverse-engineering projects that started my programming journey.',
 		technologies: ['C++', 'Direct3D 9', 'Reverse engineering'],
