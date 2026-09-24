@@ -1,0 +1,99 @@
+.header {
+	border-bottom: 1px solid var(--border-color);
+}
+
+.headerInner,
+.main {
+	max-width: 768px;
+	margin-inline: auto;
+}
+
+.headerInner {
+	display: flex;
+	height: 40px;
+	align-items: center;
+	justify-content: space-between;
+	padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right));
+}
+
+.navigation,
+.headerActions {
+	display: flex;
+	align-items: center;
+}
+
+.navigation {
+	gap: 4px;
+}
+
+.headerIcon {
+	width: 18px;
+	height: 18px;
+}
+
+.iconButton {
+	position: relative;
+	display: inline-flex;
+	height: 40px;
+	width: 44px;
+	flex-shrink: 0;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	color: var(--gray);
+	transition: color var(--transition);
+}
+
+.iconButton::before {
+	position: absolute;
+	inset-block: -2px;
+	inset-inline: 0;
+	content: "";
+}
+
+.iconButton:is(:hover, :active) {
+	color: var(--fg);
+}
+
+.main {
+	min-height: calc(100dvh - 40px);
+	padding: 24px max(24px, env(safe-area-inset-right)) max(40px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left));
+	transition: opacity 150ms ease-in-out;
+	view-transition-name: page-content;
+}
+
+:global(html.page-transitioning) .main {
+	opacity: 0;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+:global(::view-transition-old(page-content)) {
+	animation: 150ms ease-in both fade-out;
+}
+
+:global(::view-transition-new(page-content)) {
+	animation: 150ms ease-out both fade-in;
+}
+
+@keyframes fade-out {
+	to { opacity: 0; }
+}
+
+@keyframes fade-in {
+	from { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:is(.main, .iconButton) {
+		transition-duration: 0.01ms !important;
+	}
+
+	:global(::view-transition-old(page-content)),
+	:global(::view-transition-new(page-content)) {
+		animation-duration: 0.01ms;
+	}
+}

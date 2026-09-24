@@ -1,0 +1,1 @@
+var e={link:`_link_1p5zj_1`};export{e as t};

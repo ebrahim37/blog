@@ -1,6 +1,11 @@
 import { For } from 'solid-js';
 import { useConfig } from 'vike-solid/useConfig';
 
+import styles from './+Page.module.css';
+import { Card } from '~/components/Card.tsx';
+import { ExternalLink } from '~/components/ExternalLink.tsx';
+import { PageHeading } from '~/components/PageHeading.tsx';
+
 import { ExternalLinkIcon } from '~/components/Icons.tsx';
 
 type Project = {
@@ -87,27 +92,26 @@ export function Page() {
 
 	return (
 		<>
-			<h1 class='page-heading'>projects/</h1>
-			<ul class='card-list project-list'>
+			<PageHeading>projects/</PageHeading>
+			<ul class={styles.list}>
 				<For each={PROJECTS}>{project =>
 					<li>
-						<a
-							class='list-card project-card'
+						<ExternalLink
+							component={Card}
+							class={styles.card}
 							href={project.href}
-							target='_blank'
-							rel='noreferrer'
 						>
-							<div class='flex items-start justify-between gap-3'>
-								<div class='flex min-w-0 flex-1 flex-col'>
-									<h2 class='card-title'>{project.name}</h2>
-									<p class='mb-2 mt-1 text-sm text-(--gray)'>{project.description}</p>
-									<div class='project-tags'>
-										<For each={project.technologies}>{technology => <span class='project-tag' translate='no'>{technology}</span>}</For>
+							<div class={styles.cardInner}>
+								<div class={styles.details}>
+									<h2>{project.name}</h2>
+									<p class={styles.description}>{project.description}</p>
+									<div class={styles.tags}>
+										<For each={project.technologies}>{technology => <span class={styles.tag} translate='no'>{technology}</span>}</For>
 									</div>
 								</div>
 								<ExternalLinkIcon />
 							</div>
-						</a>
+						</ExternalLink>
 					</li>
 				}</For>
 			</ul>

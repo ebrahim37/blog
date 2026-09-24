@@ -1,0 +1,1 @@
+var e={heading:`_heading_lppgr_1`};export{e as t};

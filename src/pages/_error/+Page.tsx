@@ -1,6 +1,10 @@
 import { usePageContext } from 'vike-solid/usePageContext';
 import { useConfig } from 'vike-solid/useConfig';
 
+import styles from './+Page.module.css';
+import { PageHeading } from '~/components/PageHeading.tsx';
+import { TextLink } from '~/components/TextLink.tsx';
+
 export function Page() {
 	const is404 = usePageContext().is404;
 	const config = is404 ? {
@@ -14,9 +18,9 @@ export function Page() {
 
 	return (
 		<>
-			<h1 class='page-heading'>{is404 ? '404/' : 'error/'}</h1>
-			<p class='mb-4 text-(--gray)'>{config.description}</p>
-			<a class='text-link' href='/'>Return to the blog</a>
+			<PageHeading>{is404 ? '404/' : 'error/'}</PageHeading>
+			<p class={styles.description}>{config.description}</p>
+			<TextLink href='/'>Return to the blog</TextLink>
 		</>
 	);
 }

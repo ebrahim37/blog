@@ -1,0 +1,1 @@
+import{D as e,_ as t,b as n,g as r,k as i,m as a,x as o}from"./chunk-CvTMbxx2.js";import{t as s}from"./chunk-CSy_wbWK.js";var c=o(`<h1>`),l=o=>{let[l,u]=i(o,[`class`,`children`]),d=l.class?`${s.heading} ${l.class}`:s.heading;return(()=>{var i=a(c);return n(i,e(u,{class:d}),!1,!0),r(i,()=>l.children),t(),i})()};export{l as t};

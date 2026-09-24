@@ -2,7 +2,7 @@
 
 Source code for my personal website and blog, available at [ebra.dev](https://ebra.dev).
 
-The site is built with [SolidJS](https://www.solidjs.com/), [Vike](https://vike.dev/), and [Tailwind CSS](https://tailwindcss.com/). Blog posts are written in Markdown and rendered at build time with syntax highlighting from Shiki. The result is a fully static site hosted on Cloudflare Pages.
+The site is built with [SolidJS](https://www.solidjs.com/) and [Vike](https://vike.dev/). Blog posts are written in Markdown, and syntax highlighting for code block is done with Shiki.
 
 The visual design is inspired by [Max Leiter’s website](https://maxleiter.com/).
 

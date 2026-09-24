@@ -1,6 +1,6 @@
 ---
 title: Markdown Demo
-subtitle: A demo of all the markdown elements that can be used and how they look.
+subtitle: A demo of all the markdown elements supported in this blog.
 timestamp: 1786060739000
 ---
 When starting a new TypeScript project, it helps to begin with the smallest possible program:

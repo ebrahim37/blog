@@ -1,0 +1,10 @@
+.heading {
+	color: light-dark(#212121, #eaeaea);
+}
+
+.list {
+	display: flex;
+	margin-bottom: 40px;
+	flex-direction: column;
+	gap: 8px;
+}

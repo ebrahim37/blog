@@ -1,0 +1,246 @@
+.meta {
+	display: flex;
+	margin-bottom: 4px;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	color: var(--gray);
+	font-family: var(--font-mono);
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.numeric {
+	font-variant-numeric: tabular-nums;
+}
+
+.title {
+	margin: 8px 0;
+	padding: 16px 0 8px;
+	color: light-dark(#212121, #eaeaea);
+	font-family: var(--font-mono);
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 40px;
+	text-wrap: balance;
+}
+
+.subtitle {
+	margin-bottom: 16px;
+	color: light-dark(#212121, #eaeaea);
+	font-family: var(--font-mono);
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.markdownArticle {
+	--code-border-color: light-dark(rgba(127, 127, 127, 0.45), var(--border-color));
+	--code-bg: light-dark(#f4f4f5, #121212);
+	color: light-dark(#212121, #eaeaea);
+	line-height: 1.7;
+	overflow-wrap: anywhere;
+}
+
+.markdownArticle > * + * {
+	margin-top: 1em;
+}
+
+.markdownArticle > :is(h2, h3, h4, h5, h6) {
+	margin-top: 16px;
+}
+
+.markdownArticle hr {
+	height: 0;
+	border-top-width: 1px;
+}
+
+.markdownArticle :is(code, pre) {
+	font-family: var(--font-mono);
+	font-size: 1em;
+}
+
+.markdownArticle p {
+	margin-top: 1em;
+	color: var(--fg);
+}
+
+.markdownArticle :is(h2, h3, h4, h5, h6) {
+	font-family: var(--font-mono);
+	font-weight: 600;
+	scroll-margin-top: 16px;
+}
+
+.markdownArticle h2 {
+	font-size: 25.6px;
+}
+
+.markdownArticle h3 {
+	font-size: 22.4px;
+}
+
+.markdownArticle h4 {
+	font-size: 19.2px;
+}
+
+.markdownArticle a {
+	color: var(--link);
+	text-decoration: none;
+	word-break: break-word;
+}
+
+.markdownArticle a:hover {
+	text-decoration: underline;
+}
+
+.markdownArticle strong {
+	font-weight: 600;
+}
+
+.markdownArticle :is(ul, ol) {
+	margin-block: 1em;
+	padding-left: 16px;
+	list-style-position: inside;
+}
+
+.markdownArticle ul {
+	list-style-type: disc;
+}
+
+.markdownArticle ol {
+	list-style-type: decimal;
+}
+
+.markdownArticle blockquote {
+	margin: 16px 0;
+	border-left: 3px solid light-dark(#dedede, #444444);
+	padding-left: 16px;
+	color: var(--gray);
+	font-style: italic;
+}
+
+.markdownArticle blockquote p {
+	margin: 0;
+	color: inherit;
+}
+
+.markdownArticle :is(img, video) {
+	display: block;
+	margin: 16px auto;
+	border: 1px solid var(--border-color);
+	border-radius: 8px;
+	max-width: 100%;
+	height: auto;
+}
+
+.markdownArticle figcaption {
+	color: var(--gray);
+	font-size: 13.6px;
+	text-align: center;
+}
+
+.markdownArticle > figcaption {
+	margin-top: 0.25em;
+}
+
+.markdownArticle table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-block: 16px;
+	font-size: 14px;
+}
+
+.markdownArticle :is(th, td) {
+	border-bottom: 1px solid var(--border-color);
+	padding: 10px 16px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.markdownArticle th {
+	font-weight: 600;
+}
+
+.markdownArticle :is(th, td):first-child {
+	padding-left: 0;
+}
+
+.markdownArticle :is(th, td):last-child {
+	padding-right: 0;
+}
+
+.markdownArticle :not(pre) > code {
+	border-radius: 5px;
+	background: light-dark(#f5f5f5, #1a1a1a);
+	padding: 2px 4px;
+	font-size: 14px;
+}
+
+.markdownArticle :global(.code-block) {
+	margin-block: 16px;
+	overflow: hidden;
+	border: 1px solid var(--code-border-color);
+	border-radius: 5px;
+	background-color: var(--code-bg) !important;
+}
+
+.markdownArticle :global(.code-block-title) {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	border-bottom: 1px solid var(--code-border-color);
+	padding: 8px 12px;
+	font-family: var(--font-mono);
+	line-height: 24px;
+}
+
+.markdownArticle :global(.code-copy-button) {
+	display: inline-flex;
+	height: 24px;
+	min-width: 52px;
+	flex-shrink: 0;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+	padding-inline: 8px;
+	color: light-dark(#3f3f46, #d5d5d5);
+	font-size: 12px;
+	transition: background-color var(--transition), color var(--transition);
+}
+
+.markdownArticle :global(.code-copy-button):is(:hover, :active) {
+	background: light-dark(#e4e4e7, rgba(255, 255, 255, 0.1));
+	color: light-dark(#18181b, #ffffff);
+}
+
+.markdownArticle :global(pre.shiki) {
+	width: 100%;
+	overflow-x: auto;
+	background-color: var(--code-bg) !important;
+	font-size: 14px;
+	line-height: 1.8;
+	font-variant-ligatures: none;
+	tab-size: 2;
+}
+
+.markdownArticle :global(pre.shiki) > code > :global(.code-copy-button) {
+	position: sticky;
+	right: 12px;
+	float: right;
+	margin-left: 12px;
+}
+
+.markdownArticle :global(pre.shiki) > code {
+	display: block;
+	width: max-content;
+	min-width: 100%;
+	padding: 12px;
+	font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.markdownArticle :global(.code-copy-button) {
+		transition-duration: 0.01ms !important;
+	}
+}

@@ -1,6 +1,12 @@
 import { For } from 'solid-js';
 import { useConfig } from 'vike-solid/useConfig';
 
+import styles from './+Page.module.css';
+import { Card } from '~/components/Card.tsx';
+import { ExternalLink } from '~/components/ExternalLink.tsx';
+import { PageHeading } from '~/components/PageHeading.tsx';
+import { TextLink } from '~/components/TextLink.tsx';
+
 import { ExternalLinkIcon } from '~/components/Icons.tsx';
 
 const RESUME_LINK = 'https://drive.google.com/file/d/1ZqPFToCU4kQDG6dCo4Z0z7QGLY_1xBYG/view';
@@ -34,43 +40,43 @@ export function Page() {
 
 	return (
 		<>
-			<h1 class='page-heading'>about/</h1>
-			<div class='about-content'>
+			<PageHeading>about/</PageHeading>
+			<div class={styles.content}>
 				<section>
-					<h2 class='content-heading'>Ebrahim Haghshenas</h2>
-					<p class='mb-4'>
+					<h2 class={styles.contentHeading}>Ebrahim Haghshenas</h2>
+					<p class={styles.intro}>
 						I’m a new grad software engineer interested in full-stack systems, Linux infrastructure, developer tooling, and building software that stays understandable.
 					</p>
-					<div class='flex flex-wrap gap-4'>
-						<a class='text-link' href={RESUME_LINK} target='_blank' rel='noreferrer'>resume<span class='sr-only'>, opens in a new tab</span></a>
-						<a class='text-link' href='mailto:sayhi@ebra.dev'>email</a>
+					<div class={styles.contactLinks}>
+						<ExternalLink component={TextLink} href={RESUME_LINK}>resume<span class={styles.visuallyHidden}>, opens in a new tab</span></ExternalLink>
+						<TextLink href='mailto:sayhi@ebra.dev'>email</TextLink>
 					</div>
 				</section>
 
 				<section aria-labelledby='experience-heading'>
-					<h2 id='experience-heading' class='content-heading'>Experience</h2>
-					<ul class='card-list experience-list'>
+					<h2 id='experience-heading' class={styles.contentHeading}>Experience</h2>
+					<ul class={styles.experienceList}>
 						<For each={EXPERIENCE}>{position =>
 							<li>
-								<a class='list-card' href={position.href} target='_blank' rel='noreferrer'>
-									<div class='flex items-start justify-between gap-3'>
-										<div class='min-w-0 flex-1'>
-											<h3 class='card-title'>{position.title}</h3>
-											<p class='mt-1 text-xs text-(--gray) tabular-nums'>{position.period}</p>
-											<p class='mt-2 text-sm text-(--gray)'>{position.description}</p>
+								<ExternalLink component={Card} href={position.href}>
+									<div class={styles.cardInner}>
+										<div class={styles.cardBody}>
+											<h3>{position.title}</h3>
+											<p class={styles.period}>{position.period}</p>
+											<p class={styles.description}>{position.description}</p>
 										</div>
 										<ExternalLinkIcon />
 									</div>
-								</a>
+								</ExternalLink>
 							</li>
 						}</For>
 					</ul>
 				</section>
 
 				<section>
-					<h2 class='content-heading'>This site</h2>
+					<h2 class={styles.contentHeading}>This site</h2>
 					<p>
-						This site is built with <a class='text-link' href='https://www.solidjs.com/' target='_blank' rel='noreferrer' translate='no'>SolidJS</a>, <a class='text-link' href='https://vike.dev/' target='_blank' rel='noreferrer' translate='no'>Vike</a>, and <a class='text-link' href='https://tailwindcss.com/' target='_blank' rel='noreferrer' translate='no'>Tailwind CSS</a>. It is generated as a static site and deployed with Cloudflare Pages. Its visual design is inspired by <a class='text-link' href='https://maxleiter.com/' target='_blank' rel='noreferrer'>Max Leiter’s website</a>. You can view the source <a class='text-link' href='https://github.com/ebrahim37/blog' target='_blank' rel='noreferrer'>here</a>.
+						This site is built with <ExternalLink component={TextLink} href='https://www.solidjs.com/' translate='no'>SolidJS</ExternalLink> and <ExternalLink component={TextLink} href='https://vike.dev/' translate='no'>Vike</ExternalLink>. It is rendered to static HTML and deployed to Cloudflare Pages. Its visual design is inspired by <ExternalLink component={TextLink} href='https://maxleiter.com/'>Max Leiter’s website</ExternalLink>. You can view the source <ExternalLink component={TextLink} href='https://github.com/ebrahim37/blog'>here</ExternalLink>.
 					</p>
 				</section>
 			</div>

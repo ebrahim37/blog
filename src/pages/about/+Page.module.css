@@ -1,0 +1,69 @@
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	color: var(--gray);
+	line-height: 1.625;
+}
+
+.contentHeading {
+	margin-bottom: 12px;
+	color: var(--fg);
+	font-family: var(--font-mono);
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 28px;
+}
+
+.intro {
+	margin-bottom: 16px;
+}
+
+.contactLinks {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+.visuallyHidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+}
+
+.experienceList {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.cardInner {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.cardBody {
+	min-width: 0;
+	flex: 1;
+}
+
+.period {
+	margin-top: 4px;
+	color: var(--gray);
+	font-size: 12px;
+	line-height: 16px;
+	font-variant-numeric: tabular-nums;
+}
+
+.description {
+	margin-top: 8px;
+	color: var(--gray);
+	font-size: 14px;
+	line-height: 20px;
+}

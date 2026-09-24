@@ -1,6 +1,8 @@
 import { useData } from 'vike-solid/useData';
 import { useConfig } from 'vike-solid/useConfig';
 
+import styles from './+Page.module.css';
+
 import type { Data } from './+data.ts';
 import { formatDate } from '~/utils/formatDate.ts';
 
@@ -38,17 +40,17 @@ export function Page() {
 	return (
 		<article>
 			<header>
-				<div class='post-meta'>
-					<time class='tabular-nums' datetime={(new Date(data.post.timestamp)).toISOString()}>
+				<div class={styles.meta}>
+					<time class={styles.numeric} datetime={(new Date(data.post.timestamp)).toISOString()}>
 						{formatDate(data.post.timestamp)}
 					</time>
 					<span>{data.post.minutes} min read</span>
 				</div>
-				<h1 class='post-title'>{data.post.title}</h1>
-				<p class='post-subtitle'>{data.post.subtitle}</p>
+				<h1 class={styles.title}>{data.post.title}</h1>
+				<p class={styles.subtitle}>{data.post.subtitle}</p>
 			</header>
 			<div
-				class='markdown-article'
+				class={styles.markdownArticle}
 				onClick={handleCodeCopy}
 				innerHTML={data.html}
 			/>

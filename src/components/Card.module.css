@@ -1,0 +1,31 @@
+.card {
+	display: block;
+	border: 1px solid var(--border-color);
+	border-radius: 4px;
+	padding: 12px;
+	transition: background-color var(--transition);
+}
+
+.card:is(:hover, :active, :focus-visible) {
+	background: var(--lighter-gray);
+}
+
+.card :is(h2, h3) {
+	color: var(--fg);
+	font-family: var(--font-mono);
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.4;
+	transition: color var(--transition);
+}
+
+.card:is(:hover, :active, :focus-visible) :is(h2, h3) {
+	color: var(--gray);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.card,
+	.card :is(h2, h3) {
+		transition-duration: 0.01ms !important;
+	}
+}

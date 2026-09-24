@@ -1,5 +1,8 @@
 import { type Component, createSignal, onMount } from 'solid-js';
 
+import styles from './HomePagePost.module.css';
+import { Card } from './Card.tsx';
+
 import type { PostSummary } from '~/utils/posts.ts';
 import { formatDate, formatRelativeDate } from '~/utils/formatDate.ts';
 import { DocumentIcon } from '~/components/Icons.tsx';
@@ -10,20 +13,20 @@ export const HomePagePost: Component<{ post: PostSummary }> = props => {
 
 	return (
 		<li>
-			<a class='list-card post-card' href={`/posts/${props.post.slug}`}>
-				<div class='mb-1 flex items-center gap-2'>
-					<DocumentIcon />
-					<h2 class='card-title'>{props.post.title}</h2>
+			<Card class={styles.postCard} href={`/posts/${props.post.slug}`}>
+				<div class={styles.titleRow}>
+					<DocumentIcon class={styles.icon} />
+					<h2>{props.post.title}</h2>
 				</div>
-				<p class='mb-2 text-sm text-(--gray)'>{props.post.subtitle}</p>
-				<p class='mt-1 text-xs text-(--gray) tabular-nums'>
+				<p class={styles.subtitle}>{props.post.subtitle}</p>
+				<p class={styles.meta}>
 					<time datetime={(new Date(props.post.timestamp)).toISOString()}>
-						<span class='date-relative'>{relativeDate()}</span>
-						<span class='date-absolute'>{formatDate(props.post.timestamp)}</span>
+						<span class={styles.relativeDate}>{relativeDate()}</span>
+						<span class={styles.absoluteDate}>{formatDate(props.post.timestamp)}</span>
 					</time>
-					<span class='post-reading-time'> · {props.post.minutes} min read</span>
+					<span class={styles.readingTime}> · {props.post.minutes} min read</span>
 				</p>
-			</a>
+			</Card>
 		</li>
 	);
 };

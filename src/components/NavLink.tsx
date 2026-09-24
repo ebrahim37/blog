@@ -1,7 +1,7 @@
 import { type ParentComponent, createMemo } from 'solid-js';
 import { usePageContext } from 'vike-solid/usePageContext';
 
-import { cn } from '~/utils/cn.ts';
+import styles from './NavLink.module.css';
 
 export const NavLink: ParentComponent<{ href: string }> = props => {
 	const pageContext = usePageContext();
@@ -11,7 +11,7 @@ export const NavLink: ParentComponent<{ href: string }> = props => {
 	});
 
 	return (
-		<a href={props.href} class={cn('header-link', isActive() && 'header-link-active')}>
+		<a href={props.href} class={`${styles.link}${isActive() ? ` ${styles.active}` : ''}`}>
 			{props.children}
 		</a>
 	);

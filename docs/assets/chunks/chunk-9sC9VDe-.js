@@ -1,0 +1,1 @@
+var e={description:`_description_hico3_1`};export{e as t};

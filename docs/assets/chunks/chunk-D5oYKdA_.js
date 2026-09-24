@@ -1,0 +1,1 @@
+var e={titleRow:`_titleRow_1ooqy_1`,subtitle:`_subtitle_1ooqy_8`,meta:`_meta_1ooqy_15`,icon:`_icon_1ooqy_23`,postCard:`_postCard_1ooqy_27`,absoluteDate:`_absoluteDate_1ooqy_31`,readingTime:`_readingTime_1ooqy_32`,relativeDate:`_relativeDate_1ooqy_36`};export{e as t};

@@ -1,0 +1,48 @@
+.titleRow {
+	display: flex;
+	margin-bottom: 4px;
+	align-items: center;
+	gap: 8px;
+}
+
+.subtitle {
+	margin-bottom: 8px;
+	color: var(--gray);
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.meta {
+	margin-top: 4px;
+	color: var(--gray);
+	font-size: 12px;
+	line-height: 16px;
+	font-variant-numeric: tabular-nums;
+}
+
+.icon {
+	transition: color var(--transition);
+}
+
+.postCard:is(:hover, :active, :focus-visible) .icon {
+	color: var(--fg);
+}
+
+.absoluteDate,
+.readingTime {
+	display: none;
+}
+
+.postCard:is(:hover, :active, :focus-visible) .relativeDate {
+	display: none;
+}
+
+.postCard:is(:hover, :active, :focus-visible) :is(.absoluteDate, .readingTime) {
+	display: inline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.icon {
+		transition-duration: 0.01ms !important;
+	}
+}

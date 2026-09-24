@@ -1,5 +1,7 @@
 import type { Component } from 'solid-js';
 
+import styles from './Icons.module.css';
+
 export type IconProps = {
 	class?: string,
 };
@@ -34,14 +36,14 @@ export const LinkedInIcon: Component<IconProps> = props => (
 	</svg>
 );
 
-export const ExternalLinkIcon = () => (
-	<svg class='external-link-icon' viewBox='0 0 16 16' fill='currentColor' aria-hidden='true'>
+export const ExternalLinkIcon: Component<IconProps> = props => (
+	<svg class={props.class ? `${styles.externalLink} ${props.class}` : styles.externalLink} viewBox='0 0 16 16' fill='currentColor' aria-hidden='true'>
 		<path fill-rule='evenodd' clip-rule='evenodd' d='M13.5 10.25V13.25C13.5 13.3881 13.3881 13.5 13.25 13.5H2.75C2.61193 13.5 2.5 13.3881 2.5 13.25L2.5 2.75C2.5 2.61193 2.61193 2.5 2.75 2.5H5.75H6.5V1H5.75H2.75C1.7835 1 1 1.7835 1 2.75V13.25C1 14.2165 1.7835 15 2.75 15H13.25C14.2165 15 15 14.2165 15 13.25V10.25V9.5H13.5V10.25ZM9 1H9.75H14.2495C14.6637 1 14.9995 1.33579 14.9995 1.75V6.25V7H13.4995V6.25V3.56066L8.53033 8.52978L8 9.06011L6.93934 7.99945L7.46967 7.46912L12.4388 2.5H9.75H9V1Z' />
 	</svg>
 );
 
-export const DocumentIcon = () => (
-	<svg class='post-card-icon' fill='none' stroke='currentColor' viewBox='0 0 24 24' aria-hidden='true'>
+export const DocumentIcon: Component<IconProps> = props => (
+	<svg class={props.class ? `${styles.document} ${props.class}` : styles.document} fill='none' stroke='currentColor' viewBox='0 0 24 24' aria-hidden='true'>
 		<path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' />
 	</svg>
 );

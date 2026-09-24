@@ -1,0 +1,16 @@
+.link {
+	display: inline-flex;
+	height: 40px;
+	min-width: 44px;
+	align-items: center;
+	justify-content: center;
+	padding-inline: 4px;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 18px;
+	text-underline-offset: 4px;
+}
+
+.link:is(:hover, .active) {
+	text-decoration: underline;
+}
