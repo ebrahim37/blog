@@ -5,7 +5,7 @@ import styles from './Layout.module.css';
 import { useTheme } from '~/utils/useTheme.ts';
 import { NavLink } from '~/components/NavLink.tsx';
 import { ExternalLink } from '~/components/ExternalLink.tsx';
-import { GitHubIcon, LinkedInIcon, MoonIcon, RssIcon, SunIcon } from '~/components/Icons.tsx';
+import { MoonIcon, RssIcon, SunIcon } from '~/components/Icons.tsx';
 
 export const Layout: ParentComponent = props => {
 	const [theme, toggleTheme] = useTheme();
@@ -36,20 +36,6 @@ export const Layout: ParentComponent = props => {
 							aria-label='RSS feed (opens in a new tab)'
 						>
 							<RssIcon class={styles.headerIcon} />
-						</ExternalLink>
-						<ExternalLink
-							class={styles.iconButton}
-							href='https://github.com/ebrahim37'
-							aria-label='Ebrahim on GitHub (opens in a new tab)'
-						>
-							<GitHubIcon class={styles.headerIcon} />
-						</ExternalLink>
-						<ExternalLink
-							class={styles.iconButton}
-							href='https://www.linkedin.com/in/ebrahim-hagh'
-							aria-label='Ebrahim on LinkedIn (opens in a new tab)'
-						>
-							<LinkedInIcon class={styles.headerIcon} />
 						</ExternalLink>
 					</div>
 				</div>
