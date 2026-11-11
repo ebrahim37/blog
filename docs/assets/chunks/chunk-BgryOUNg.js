@@ -1,1 +1,0 @@
-var e={heading:`_heading_1k2wb_1`,list:`_list_1k2wb_5`};export{e as t};

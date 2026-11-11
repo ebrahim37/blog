@@ -4,7 +4,7 @@
         <title>Ebrahim Haghshenas</title>
         <link>https://ebra.dev/</link>
         <description>Posts by Ebrahim Haghshenas.</description>
-        <lastBuildDate>Wed, 11 Nov 2026 20:28:55 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 11 Nov 2026 22:01:31 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -24,11 +24,14 @@
             <pubDate>Thu, 06 Aug 2026 23:58:59 GMT</pubDate>
             <description><![CDATA[A demo of all the markdown elements supported in this blog.]]></description>
             <content:encoded><![CDATA[<p>When starting a new TypeScript project, it helps to begin with the smallest possible program:</p>
-<pre><code class="language-ts"><figure class="code-block" style="background-color:light-dark(#ffffff, #121212);--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212;color:light-dark(#393a34, #dbd7caee);--shiki-light:#393a34;--shiki-dark:#dbd7caee"><figcaption class="code-block-title"><span>files/hello.ts</span><span class="code-copy-button" data-copy-code="" aria-live="polite">Copy</span></figcaption><pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:light-dark(#ffffff, #121212);--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212;color:light-dark(#393a34, #dbd7caee);--shiki-light:#393a34;--shiki-dark:#dbd7caee" tabindex="0" title="files/hello.ts"><code class="language-ts"><span class="line"><span style="color:light-dark(#AB5959, #CB7676);--shiki-light:#AB5959;--shiki-dark:#CB7676">const </span><span style="color:light-dark(#B07D48, #BD976A);--shiki-light:#B07D48;--shiki-dark:#BD976A">a</span><span style="color:light-dark(#999999, #666666);--shiki-light:#999999;--shiki-dark:#666666"> =</span><span style="color:light-dark(#2F798A, #4C9A91);--shiki-light:#2F798A;--shiki-dark:#4C9A91"> 1</span><span style="color:light-dark(#999999, #666666);--shiki-light:#999999;--shiki-dark:#666666">;</span><span style="color:light-dark(#A0ADA0, #758575DD);--shiki-light:#A0ADA0;--shiki-dark:#758575DD"> // this code block has a file name</span></span></code></pre></figure></code></pre>
-<pre><code class="language-ts"><figure class="code-block" style="background-color:light-dark(#ffffff, #121212);--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212;color:light-dark(#393a34, #dbd7caee);--shiki-light:#393a34;--shiki-dark:#dbd7caee"><pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:light-dark(#ffffff, #121212);--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212;color:light-dark(#393a34, #dbd7caee);--shiki-light:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-ts"><span class="code-copy-button" data-copy-code="" aria-live="polite">Copy</span><span class="line"><span style="color:light-dark(#AB5959, #CB7676);--shiki-light:#AB5959;--shiki-dark:#CB7676">const </span><span style="color:light-dark(#B07D48, #BD976A);--shiki-light:#B07D48;--shiki-dark:#BD976A">b</span><span style="color:light-dark(#999999, #666666);--shiki-light:#999999;--shiki-dark:#666666"> =</span><span style="color:light-dark(#2F798A, #4C9A91);--shiki-light:#2F798A;--shiki-dark:#4C9A91"> 2</span><span style="color:light-dark(#999999, #666666);--shiki-light:#999999;--shiki-dark:#666666">;</span></span>
-<span class="line"><span style="color:light-dark(#AB5959, #CB7676);--shiki-light:#AB5959;--shiki-dark:#CB7676">const </span><span style="color:light-dark(#B07D48, #BD976A);--shiki-light:#B07D48;--shiki-dark:#BD976A">c</span><span style="color:light-dark(#999999, #666666);--shiki-light:#999999;--shiki-dark:#666666"> =</span><span style="color:light-dark(#2F798A, #4C9A91);--shiki-light:#2F798A;--shiki-dark:#4C9A91"> 3</span><span style="color:light-dark(#999999, #666666);--shiki-light:#999999;--shiki-dark:#666666">;</span><span style="color:light-dark(#A0ADA0, #758575DD);--shiki-light:#A0ADA0;--shiki-dark:#758575DD"> // this code block has a very long line which overflows and makes a scrollbar appear</span></span></code></pre></figure></code></pre>
-<pre><code class="language-ts"><figure class="code-block" style="background-color:light-dark(#ffffff, #121212);--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212;color:light-dark(#393a34, #dbd7caee);--shiki-light:#393a34;--shiki-dark:#dbd7caee"><pre class="shiki shiki-themes vitesse-light vitesse-dark" style="background-color:light-dark(#ffffff, #121212);--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212;color:light-dark(#393a34, #dbd7caee);--shiki-light:#393a34;--shiki-dark:#dbd7caee" tabindex="0"><code class="language-ts"><span class="code-copy-button" data-copy-code="" aria-live="polite">Copy</span><span class="line"><span style="color:light-dark(#AB5959, #CB7676);--shiki-light:#AB5959;--shiki-dark:#CB7676">const </span><span style="color:light-dark(#B07D48, #BD976A);--shiki-light:#B07D48;--shiki-dark:#BD976A">b</span><span style="color:light-dark(#999999, #666666);--shiki-light:#999999;--shiki-dark:#666666"> =</span><span style="color:light-dark(#2F798A, #4C9A91);--shiki-light:#2F798A;--shiki-dark:#4C9A91"> 2</span><span style="color:light-dark(#999999, #666666);--shiki-light:#999999;--shiki-dark:#666666">;</span><span style="color:light-dark(#A0ADA0, #758575DD);--shiki-light:#A0ADA0;--shiki-dark:#758575DD"> // this code block's first line overflows, shift the copy button so we can read it fully</span></span>
-<span class="line"><span style="color:light-dark(#AB5959, #CB7676);--shiki-light:#AB5959;--shiki-dark:#CB7676">const </span><span style="color:light-dark(#B07D48, #BD976A);--shiki-light:#B07D48;--shiki-dark:#BD976A">c</span><span style="color:light-dark(#999999, #666666);--shiki-light:#999999;--shiki-dark:#666666"> =</span><span style="color:light-dark(#2F798A, #4C9A91);--shiki-light:#2F798A;--shiki-dark:#4C9A91"> 3</span><span style="color:light-dark(#999999, #666666);--shiki-light:#999999;--shiki-dark:#666666">;</span></span></code></pre></figure></code></pre>
+<pre><code class="language-ts">const a = 1; // this code block has a file name
+</code></pre>
+<pre><code class="language-ts">const b = 2;
+const c = 3; // this code block has a very long line which overflows and makes a scrollbar appear
+</code></pre>
+<pre><code class="language-ts">const b = 2; // this code block's first line overflows, shift the copy button so we can read it fully
+const c = 3;
+</code></pre>
 <blockquote>
 <p>A small working example is often more useful than a large unfinished one.</p>
 </blockquote>
@@ -55,7 +58,7 @@
 <li>A test runner</li>
 <li><code>npm install --save-dev typescript</code></li>
 </ul>
-<p>For more information, read the <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">TypeScript documentation</a>.</p>
+<p>For more information, read the <a href="https://www.example.com">TypeScript documentation</a>.</p>
 <h2>Project Files</h2>
 <table>
 <thead>
@@ -75,15 +78,14 @@
 </tr>
 </tbody>
 </table>
-<p>At one time, you might have believed that <s>TypeScript requires a complicated setup</s>. For a basic project, only a few files are necessary.</p>
+<p>At one time, you might have believed that <del>TypeScript requires a complicated setup</del>. For a basic project, only a few files are necessary.</p>
 <p><img src="https://placehold.co/400" alt="A placeholder image"></p>
 <figcaption>
     Placeholder caption.
     <a href="https://placehold.co" target="_blank" rel="noreferrer">
         source
     </a>
-</figcaption>
-]]></content:encoded>
+</figcaption>]]></content:encoded>
             <author>sayhi@ebra.dev (Ebrahim Haghshenas)</author>
         </item>
     </channel>

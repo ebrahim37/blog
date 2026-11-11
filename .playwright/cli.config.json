@@ -1,9 +1,9 @@
 {
-  "outputDir": "/tmp/playwright-cli",
-  "browser": {
-    "browserName": "chromium",
-    "launchOptions": {
-      "channel": "chromium"
-    }
-  }
+	"outputDir": "/tmp/playwright-cli",
+	"browser": {
+		"browserName": "chromium",
+		"launchOptions": {
+			"channel": "chromium"
+		}
+	}
 }

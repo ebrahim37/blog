@@ -1,10 +1,8 @@
 # ebra.dev
 
-Source code for my personal website and blog, available at [ebra.dev](https://ebra.dev).
+Source code for my personal website/blog.
 
-The site is built with [SolidJS](https://www.solidjs.com/) and [Vike](https://vike.dev/). Blog posts are written in Markdown, and syntax highlighting for code block is done with Shiki.
-
-The visual design is inspired by [Max Leiter’s website](https://maxleiter.com/).
+The site is built with [Waku](https://waku.gg/) and [shadcn/ui](https://ui.shadcn.com/).
 
 ## Development
 
@@ -33,8 +31,9 @@ The build command prerenders the site and writes static output to `docs/`.
 ```text
 posts/       Markdown blog posts
 public/      Static files copied into the build
-src/         SolidJS components, pages, styles, and utilities
-docs/        Gemerated static site
+src/pages/   Waku file-based routes (src/pages/_api/rss.xml.ts generates the RSS feed)
+src/components/ui/  shadcn/ui components
+docs/        Generated static site
 ```
 
 Each post is a Markdown file in `posts/` with front matter for its title, subtitle, and timestamp:

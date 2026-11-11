@@ -3,27 +3,23 @@
 		"lib": ["ESNext", "DOM", "DOM.Iterable"],
 		"target": "ESNext",
 		"module": "ESNext",
-		"moduleDetection": "force",
-		"jsx": "preserve",
-		"jsxImportSource": "solid-js",
-		"types": ["node", "vite/client"],
 
 		"moduleResolution": "bundler",
+		"moduleDetection": "force",
+		"jsx": "react-jsx",
+		"types": ["node"],
 		"isolatedModules": true,
 		"allowImportingTsExtensions": true,
-		"verbatimModuleSyntax": true,
 		"noEmit": true,
 
 		"strict": true,
 		"skipLibCheck": true,
-		"noFallthroughCasesInSwitch": true,
 		"noUncheckedIndexedAccess": true,
-		"noImplicitOverride": true,
-		
+
 		"noUnusedLocals": true,
 
 		"paths": {
-			"~/*": ["./src/*"]
+			"@/*": ["./src/*"]
 		}
 	}
 }
