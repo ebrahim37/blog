@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Ebrahim Haghshenas</title>
         <link>https://ebra.dev/</link>
         <description>Posts by Ebrahim Haghshenas.</description>
-        <lastBuildDate>Thu, 12 Nov 2026 08:38:15 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 12 Nov 2026 08:41:16 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -15,72 +15,6 @@
             <guid isPermaLink="false">linux-servers-only-data-needs-backup</guid>
             <pubDate>Thu, 24 Sep 2026 05:55:51 GMT</pubDate>
             <description><![CDATA[How I use Fedora CoreOS, Podman Quadlets, and NixOS to make reproducible Linux machines.]]></description>
-            <author>sayhi@ebra.dev (Ebrahim Haghshenas)</author>
-        </item>
-        <item>
-            <title><![CDATA[Markdown Demo]]></title>
-            <link>https://ebra.dev/posts/markdown-demo</link>
-            <guid isPermaLink="false">markdown-demo</guid>
-            <pubDate>Thu, 06 Aug 2026 23:58:59 GMT</pubDate>
-            <description><![CDATA[A demo of all the markdown elements supported in this blog.]]></description>
-            <content:encoded><![CDATA[<p>When starting a new TypeScript project, it helps to begin with the smallest possible program:</p>
-<pre><code class="language-ts">const a = 1; // this code block has a file name
-</code></pre>
-<pre><code class="language-ts">const b = 2;
-const c = 3; // this code block has a very long line which overflows and makes a scrollbar appear
-</code></pre>
-<pre><code class="language-ts">const b = 2; // this code block's first line overflows, shift the copy button so we can read it fully
-const c = 3;
-</code></pre>
-<blockquote>
-<p>A small working example is often more useful than a large unfinished one.</p>
-</blockquote>
-<h2>Setting Up the Project</h2>
-<p>First, create a new directory and initialize your project. Keep the initial setup simple so that you can understand each dependency you add.</p>
-<h3>Why Use TypeScript?</h3>
-<p>TypeScript adds static type checking to JavaScript. This can make your code <strong>safer and easier to maintain</strong>, especially as a project grows.</p>
-<p>It is also <em>useful for catching mistakes</em> before your program runs.</p>
-<p>Normal JavaScript is still valid in most TypeScript files.</p>
-<blockquote>
-<p>TypeScript does not replace JavaScript. It builds on top of it.</p>
-</blockquote>
-<h2>Installation Steps</h2>
-<p>Follow these steps to create the project:</p>
-<ol>
-<li>Create a new project directory.</li>
-<li>Initialize a package manager.</li>
-<li>Install TypeScript.</li>
-</ol>
-<p>You may also want to add:</p>
-<ul>
-<li>A formatter</li>
-<li>A linter</li>
-<li>A test runner</li>
-<li><code>npm install --save-dev typescript</code></li>
-</ul>
-<p>For more information, read the <a href="https://www.example.com">TypeScript documentation</a>.</p>
-<h2>Project Files</h2>
-<table>
-<thead>
-<tr>
-<th>Syntax</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Header</td>
-<td>Title</td>
-</tr>
-<tr>
-<td>Paragraph</td>
-<td>Text</td>
-</tr>
-</tbody>
-</table>
-<p>At one time, you might have believed that <del>TypeScript requires a complicated setup</del>. For a basic project, only a few files are necessary.</p>
-<p><img src="https://placehold.co/400" alt="A placeholder image">
-<em>Placeholder caption. <a href="https://placehold.co">source</a></em></p>]]></content:encoded>
             <author>sayhi@ebra.dev (Ebrahim Haghshenas)</author>
         </item>
     </channel>
