@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 				</div>
 			</header>
 			<ViewTransition name='page'>
-				<main className='mx-auto min-h-[calc(100dvh-2.5rem)] max-w-3xl px-6 pt-6 pb-10'>
+				<main className='mx-auto min-h-[calc(100dvh-2.5rem-1px)] max-w-3xl px-6 pt-6 pb-10'>
 					{children}
 				</main>
 			</ViewTransition>

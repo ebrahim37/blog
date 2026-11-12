@@ -14,6 +14,7 @@ const toHtml = unified()
 	.use(remarkRehype, { allowDangerousHtml: true })
 	.use(rehypeRaw)
 	.use(rehypeStringify);
+
 const author = {
 	name: 'Ebrahim Haghshenas',
 	email: 'sayhi@ebra.dev',
@@ -25,7 +26,7 @@ export const GET = async () => {
 		title: author.name,
 		id: author.link,
 		link: author.link,
-		description: `Posts by ${author.name}.`,
+		description: "Ebrahim's Blog",
 		language: 'en',
 		author,
 		feedLinks: { rss: `${author.link}/rss.xml` },

@@ -8,7 +8,7 @@ export default function PostPage({ slug }: PageProps<'/posts/[slug]'>) {
 	const post = getPost(slug);
 	return (
 		<article>
-			<title>{post.title}</title>
+			<title>{post.title} | ebra.dev</title>
 			<meta name='description' content={post.subtitle} />
 			<header className='font-mono text-primary'>
 				<div className='flex justify-between text-sm text-muted-foreground tabular-nums'>

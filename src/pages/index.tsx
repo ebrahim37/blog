@@ -13,7 +13,7 @@ export default function Home() {
 	return (
 		<>
 			<title>Blog | ebra.dev</title>
-			<meta name='description' content='Posts by Ebrahim Haghshenas.' />
+			<meta name='description' content="Ebrahim's Blog" />
 			<PageHeading>posts/</PageHeading>
 			<ItemGroup className='gap-2'>
 				{getPosts().map(post => (
