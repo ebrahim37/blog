@@ -1,6 +1,7 @@
-import { ExternalItem, PageHeading } from '@/components/common';
-import { Badge } from '@/components/ui/badge';
-import { ItemDescription, ItemGroup, ItemTitle } from '@/components/ui/item';
+import { ExternalItem } from '@/components/external-item';
+import { PageHeading } from '@/components/page-heading';
+import { Badge } from '@/components/shad/badge';
+import { ItemDescription, ItemGroup, ItemTitle } from '@/components/shad/item';
 
 const PROJECTS = [
 	{

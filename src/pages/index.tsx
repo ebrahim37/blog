@@ -1,9 +1,9 @@
 import { FileTextIcon } from 'lucide-react';
 import { Link } from 'waku';
 
-import { RelativeDate } from '@/components/client';
-import { PageHeading } from '@/components/common';
-import { Item, ItemContent, ItemDescription, ItemGroup, ItemTitle } from '@/components/ui/item';
+import { PageHeading } from '@/components/page-heading';
+import { RelativeDate } from '@/components/relative-date';
+import { Item, ItemContent, ItemDescription, ItemGroup, ItemTitle } from '@/components/shad/item';
 import { formatDate } from '@/lib/date';
 import { getPosts } from '@/lib/posts';
 

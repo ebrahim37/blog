@@ -8,8 +8,17 @@ import rehypeStringify from 'rehype-stringify';
 
 import { getPosts } from '@/lib/posts';
 
-const toHtml = unified().use(remarkParse).use(remarkGfm).use(remarkRehype, { allowDangerousHtml: true }).use(rehypeRaw).use(rehypeStringify);
-const author = { name: 'Ebrahim Haghshenas', email: 'sayhi@ebra.dev', link: 'https://ebra.dev' };
+const toHtml = unified()
+	.use(remarkParse)
+	.use(remarkGfm)
+	.use(remarkRehype, { allowDangerousHtml: true })
+	.use(rehypeRaw)
+	.use(rehypeStringify);
+const author = {
+	name: 'Ebrahim Haghshenas',
+	email: 'sayhi@ebra.dev',
+	link: 'https://ebra.dev'
+};
 
 export const GET = async () => {
 	const feed = new Feed({

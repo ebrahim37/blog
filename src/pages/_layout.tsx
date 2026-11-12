@@ -3,8 +3,9 @@ import '@/styles.css';
 import { type ReactNode, ViewTransition } from 'react';
 import { RssIcon } from 'lucide-react';
 
-import { NavLink, ThemeToggle } from '@/components/client';
-import { buttonVariants } from '@/components/ui/button';
+import { NavLink } from '@/components/nav-link';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { buttonVariants } from '@/components/shad/button';
 
 export default function Layout({ children }: { children: ReactNode }) {
 	return (

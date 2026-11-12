@@ -2,28 +2,28 @@ import Markdown, { type ExtraProps } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 
-import { CodeBlock, CodeBlockActions, CodeBlockContent, CodeBlockCopyButton, CodeBlockHeader, CodeBlockLine, CodeBlockTitle } from '@/components/ui/code-block';
+import { CodeBlock, CodeBlockActions, CodeBlockContent, CodeBlockCopyButton, CodeBlockHeader, CodeBlockLine, CodeBlockTitle } from '@/components/shad/code-block';
 import { highlightCode } from '@/lib/highlighter';
 
-// keep fence meta (e.g. title='file.ts') as a data attribute, since rehype-raw drops node.data
-type MdNode = { meta?: string, data?: object, children?: MdNode[] };
-const remarkCodeMeta = () => {
-	const walk = (node: MdNode) => {
-		if (node.meta)
-			node.data = { hProperties: { dataMeta: node.meta } };
-		node.children?.forEach(walk);
-	};
-	return walk;
+// keep fence meta (the title, e.g. ```ts file.ts) as an attribute, since rehype-raw drops node.data
+type MdNode = {
+	meta?: string,
+	data?: object,
+	children?: MdNode[]
+};
+const remarkCodeMeta = () => function walk(node: MdNode) {
+	if (node.meta)
+		node.data = { hProperties: { dataMeta: node.meta } };
+	node.children?.forEach(walk);
 };
 
-// highlighted on the server at build time, so no highlighter ships to the browser
 const Pre = async ({ node }: ExtraProps) => {
-	const code = node!.children[0] as typeof node & {};
-	const text = (code.children[0] as { value: string }).value.replace(/\n$/, '');
-	const lang = String((code.properties.className as string[] | undefined)?.[0] ?? '').replace('language-', '');
-	const title = String(code.properties.dataMeta ?? '').match(/title=["']([^"']*)/)?.[1];
-	const lines = await highlightCode(text, lang) ?? text.split('\n');
-	const actions = <CodeBlockActions><CodeBlockCopyButton value={text} /></CodeBlockActions>;
+	const { properties, children: [text] } = node!.children[0] as typeof node & {};
+	const code = (text as { value: string }).value.replace(/\n$/, '');
+	const lang = String(properties.className ?? '').replace('language-', '');
+	const title = properties.dataMeta as string | undefined;
+	const lines = await highlightCode(code, lang) ?? code.split('\n');
+	const actions = <CodeBlockActions><CodeBlockCopyButton value={code} /></CodeBlockActions>;
 
 	return (
 		<CodeBlock className='not-prose my-4 bg-muted/60'>

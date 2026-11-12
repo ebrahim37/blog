@@ -1,5 +1,7 @@
-import { ExternalItem, PageHeading, TextLink, ext } from '@/components/common';
-import { ItemDescription, ItemGroup, ItemTitle } from '@/components/ui/item';
+import { ExternalItem } from '@/components/external-item';
+import { PageHeading } from '@/components/page-heading';
+import { TextLink } from '@/components/text-link';
+import { ItemDescription, ItemGroup, ItemTitle } from '@/components/shad/item';
 
 const RESUME_LINK = 'https://drive.google.com/file/d/1ZqPFToCU4kQDG6dCo4Z0z7QGLY_1xBYG/view';
 
@@ -37,10 +39,10 @@ export default function About() {
 					<Heading>Ebrahim Haghshenas</Heading>
 					<p>I’m a new-grad software engineer interested in full-stack systems, Linux infrastructure, developer tooling, and building software that stays understandable.</p>
 					<div className='mt-8 flex flex-wrap gap-4'>
-						<TextLink {...ext} href='https://github.com/ebrahim37'>github</TextLink>
-						<TextLink {...ext} href='https://www.linkedin.com/in/ebrahim-hagh'>linkedin</TextLink>
+						<TextLink external href='https://github.com/ebrahim37'>github</TextLink>
+						<TextLink external href='https://www.linkedin.com/in/ebrahim-hagh'>linkedin</TextLink>
 						<TextLink href='mailto:sayhi@ebra.dev'>email</TextLink>
-						<TextLink {...ext} href={RESUME_LINK}>resume</TextLink>
+						<TextLink external href={RESUME_LINK}>resume</TextLink>
 					</div>
 				</section>
 				<section>
@@ -58,9 +60,9 @@ export default function About() {
 				<section className='flex flex-col gap-2'>
 					<Heading>This site</Heading>
 					<p>
-						This site is built with <TextLink {...ext} href='https://waku.gg/' translate='no'>Waku</TextLink> and <TextLink {...ext} href='https://ui.shadcn.com/' translate='no'>shadcn/ui</TextLink>, and hosted on Cloudflare Pages. Its visual design is inspired by <TextLink {...ext} href='https://maxleiter.com/'>Max Leiter’s website</TextLink>.
+						This site is built with <TextLink external href='https://waku.gg/' translate='no'>Waku</TextLink> and <TextLink external href='https://ui.shadcn.com/' translate='no'>shadcn/ui</TextLink>, and hosted on Cloudflare Pages. Its visual design is inspired by <TextLink external href='https://maxleiter.com/'>Max Leiter’s website</TextLink>.
 					</p>
-					<p>You can view the source <TextLink {...ext} href='https://github.com/ebrahim37/blog'>here</TextLink>.</p>
+					<p>You can view the source <TextLink external href='https://github.com/ebrahim37/blog'>here</TextLink>.</p>
 				</section>
 			</div>
 		</>

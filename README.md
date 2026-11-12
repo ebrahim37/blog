@@ -32,7 +32,6 @@ The build command prerenders the site and writes static output to `docs/`.
 posts/       Markdown blog posts
 public/      Static files copied into the build
 src/pages/   Waku file-based routes (src/pages/_api/rss.xml.ts generates the RSS feed)
-src/components/ui/  shadcn/ui components
 docs/        Generated static site
 ```
 

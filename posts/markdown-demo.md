@@ -5,7 +5,7 @@ timestamp: 1786060739000
 ---
 When starting a new TypeScript project, it helps to begin with the smallest possible program:
 
-```ts title='files/hello.ts'
+```ts files/hello.ts
 const a = 1; // this code block has a file name
 ```
 

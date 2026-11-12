@@ -1,4 +1,5 @@
-import { PageHeading, TextLink } from '@/components/common';
+import { PageHeading } from '@/components/page-heading';
+import { TextLink } from '@/components/text-link';
 
 export default function NotFound() {
 	return (
