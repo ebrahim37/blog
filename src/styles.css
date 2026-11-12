@@ -60,7 +60,7 @@
 
 @utility nav-icon {
 	@apply inline-flex h-10 w-11 items-center justify-center text-muted-foreground transition-colors;
-	@apply duration-100 hover:text-foreground [&_svg]:size-4.5;
+	@apply duration-100 hover:text-foreground [&_svg]:size-4.5 [&_svg]:stroke-[2.25];
 }
 
 @layer base {
@@ -68,7 +68,7 @@
 		@apply border-border outline-ring/50;
 	}
 	html {
-		@apply bg-background font-sans text-foreground antialiased;
+		@apply overscroll-none bg-background font-sans text-foreground antialiased;
 		scrollbar-gutter: stable;
 	}
 	::selection {

@@ -41,7 +41,10 @@ export const GET = async () => {
 			author: [author],
 		});
 	}
-	return new Response(feed.rss2(), { headers: { 'content-type': 'application/rss+xml' } });
+	// application/xml rather than application/rss+xml, so browsers display it instead of downloading
+	return new Response(feed.rss2(), {
+		headers: { 'content-type': 'application/xml; charset=utf-8' },
+	});
 };
 
 export const getConfig = async () => ({ render: 'static' } as const);

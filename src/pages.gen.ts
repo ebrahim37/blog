@@ -1,5 +1,5 @@
 // deno-fmt-ignore-file
-// biome-ignore format: generated types do not need formatting
+// biome-ignore-all format: generated types do not need formatting
 // prettier-ignore
 import type { PathsForPages, GetConfigResponse, SearchCodecsForPages } from 'waku/router';
 
@@ -9,7 +9,6 @@ import type { getConfig as File_PostsSlug_getConfig } from './pages/posts/[slug]
 // prettier-ignore
 type Page =
 | { path: '/404'; render: 'static' }
-| { path: '/_root'; render: 'static' }
 | { path: '/about'; render: 'static' }
 | { path: '/'; render: 'static' }
 | ({ path: '/posts/[slug]' } & GetConfigResponse<typeof File_PostsSlug_getConfig>)

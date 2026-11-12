@@ -1,5 +1,6 @@
 import FileTextIcon from 'lucide-react/icons/file-text';
 import { Link } from 'waku';
+import { cn } from 'cn';
 
 import { PageHeading } from '@/components/page-heading';
 import { RelativeDate } from '@/components/relative-date';
@@ -26,9 +27,10 @@ export default function Home() {
 					>
 						<ItemContent>
 							<ItemTitle>
-								<FileTextIcon
-									className='size-4 text-muted-foreground group-hover/item:text-foreground'
-								/>
+								<FileTextIcon className={cn(
+									'size-4 shrink-0 text-muted-foreground',
+									'group-hover/item:text-foreground',
+								)} />
 								{post.title}
 							</ItemTitle>
 							<ItemDescription>{post.subtitle}</ItemDescription>
