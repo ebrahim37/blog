@@ -1,19 +1,11 @@
-import type { CSSProperties } from 'react';
+import { Children, type CSSProperties, type JSX, type ReactElement, type ReactNode } from 'react';
 import Markdown, { type ExtraProps } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { createHighlighterCore } from 'shiki/core';
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 
-import {
-	CodeBlock,
-	CodeBlockActions,
-	CodeBlockContent,
-	CodeBlockCopyButton,
-	CodeBlockHeader,
-	CodeBlockLine,
-	CodeBlockTitle,
-} from '@/components/shad/code-block';
+import { CodeBlock } from '@/components/code-block';
 
 // keep fence meta (the title, e.g. ```ts file.ts) as an attribute, since rehype-raw drops node.data
 type MdNode = {
@@ -71,20 +63,28 @@ const Pre = async ({ node }: ExtraProps) => {
 	const lang = String(properties.className ?? '').replace('language-', '');
 	const title = properties.dataMeta as string | undefined;
 	const lines = await highlightCode(code, lang) ?? code.split('\n');
-	const actions = <CodeBlockActions><CodeBlockCopyButton value={code} /></CodeBlockActions>;
+	const filename = title?.split('/').pop() ?? `code.${lang || 'txt'}`;
 
+	return <CodeBlock code={code} lines={lines} title={title} filename={filename} />;
+};
+
+// an image followed by an *italic* line becomes a figure, with that line as its caption
+const P = ({ node, children, ...props }: JSX.IntrinsicElements['p'] & ExtraProps) => {
+	const isBlank = (child: unknown) => typeof child === 'string' && !child.trim();
+	const [img, em, ...rest] = node!.children
+		.filter(child => child.type !== 'text' || child.value.trim());
+	const isTag = (child: typeof img, tag: string) =>
+		child?.type === 'element' && child.tagName === tag;
+	if (!isTag(img, 'img') || !isTag(em, 'em') || rest.length)
+		return <p {...props}>{children}</p>;
+
+	const [image, caption] = Children.toArray(children).filter(child => !isBlank(child));
+	const captionText = (caption as ReactElement<{ children: ReactNode }>).props.children;
 	return (
-		<CodeBlock className='not-prose my-4 bg-muted/60'>
-			{title ? (
-				<CodeBlockHeader>
-					<CodeBlockTitle className='font-mono'>{title}</CodeBlockTitle>
-					{actions}
-				</CodeBlockHeader>
-			) : actions}
-			<CodeBlockContent>
-				{lines.map((line, i) => <CodeBlockLine key={i}>{line}</CodeBlockLine>)}
-			</CodeBlockContent>
-		</CodeBlock>
+		<figure>
+			{image}
+			<figcaption>{captionText}</figcaption>
+		</figure>
 	);
 };
 
@@ -93,7 +93,11 @@ export const PostMarkdown = ({ children }: { children: string }) => (
 		remarkPlugins={[remarkGfm, remarkCodeMeta]}
 		rehypePlugins={[rehypeRaw]}
 		components={{
-			a: ({ node: _, ...props }) => <a {...props} target='_blank' rel='noreferrer' />,
+			// open external links in a new tab, keep in-page ones (footnotes, #headings) in place
+			a: ({ node: _, ...props }) => props.href?.startsWith('#')
+				? <a {...props} />
+				: <a {...props} target='_blank' rel='noreferrer' />,
+			p: P,
 			pre: Pre,
 		}}
 	>

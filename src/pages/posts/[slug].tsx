@@ -1,5 +1,4 @@
 import type { PageProps } from 'waku/router';
-import { cn } from 'cn';
 
 import { PostMarkdown } from '@/components/markdown';
 import { formatDate } from '@/lib/date';
@@ -21,16 +20,7 @@ export default function PostPage({ slug }: PageProps<'/posts/[slug]'>) {
 				<h1 className='my-2 pt-4 pb-2 text-3xl/10 font-bold text-balance'>{post.title}</h1>
 				<p className='mb-4'>{post.subtitle}</p>
 			</header>
-			<div
-				className={cn(
-					'prose max-w-none leading-[1.7] wrap-anywhere prose-figcaption:text-center',
-					'prose-headings:font-mono prose-headings:font-semibold',
-					'prose-a:font-normal prose-a:no-underline hover:prose-a:underline',
-					'prose-img:mx-auto prose-img:rounded-lg prose-img:border',
-					'prose-code:rounded-md prose-code:bg-muted prose-code:px-1 prose-code:py-0.5',
-					'prose-code:font-normal',
-				)}
-			>
+			<div className='markdown'>
 				<PostMarkdown>{post.content}</PostMarkdown>
 			</div>
 		</article>

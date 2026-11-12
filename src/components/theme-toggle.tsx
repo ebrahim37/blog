@@ -9,7 +9,7 @@ export const ThemeToggle = () => (
 		variant='ghost'
 		size='icon-lg'
 		aria-label='Toggle theme'
-		className='text-muted-foreground'
+		className='rounded-[0.375rem] text-muted-foreground'
 		onClick={() => {
 			const dark = document.documentElement.classList.toggle('dark');
 			localStorage.setItem('theme', dark ? 'dark' : 'light');

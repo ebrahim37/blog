@@ -7,7 +7,7 @@ import * as Shad from '@/components/shad/item';
 export const ExternalItem = ({ href, children }: { href: string, children: ReactNode }) => (
 	<Shad.Item
 		variant='outline'
-		className='flex-nowrap items-start'
+		className='flex-nowrap items-start p-3'
 		render={<a href={href} target='_blank' rel='noreferrer' />}
 	>
 		<Shad.ItemContent className='h-full'>{children}</Shad.ItemContent>
@@ -27,5 +27,5 @@ export const ItemTitle = ({ className, ...props }: ComponentProps<typeof Shad.It
 );
 
 export const ItemDescription = ({ className, ...props }: ComponentProps<'p'>) => (
-	<Shad.ItemDescription className={cn('line-clamp-none', className)} {...props} />
+	<Shad.ItemDescription className={cn('line-clamp-none leading-5', className)} {...props} />
 );

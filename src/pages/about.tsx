@@ -33,7 +33,7 @@ const Heading = ({ children }: { children: string }) => (
 export default function About() {
 	return (
 		<>
-			<title>About | Ebrahim Haghshenas</title>
+			<title>About | ebra.dev</title>
 			<meta
 				name='description'
 				content='Ebrahim Haghshenas is a software engineer and AI training specialist who builds full-stack systems, developer tools, and infrastructure.'
@@ -43,11 +43,11 @@ export default function About() {
 				<section>
 					<Heading>Ebrahim Haghshenas</Heading>
 					<p>
-						I’m a new-grad software engineer interested in full-stack systems,
+						I’m a new grad software engineer interested in full-stack systems,
 						Linux infrastructure, developer tooling, and building software
 						that stays understandable.
 					</p>
-					<div className='mt-8 flex flex-wrap gap-4'>
+					<div className='mt-4 flex flex-wrap gap-4'>
 						<TextLink external href='https://github.com/ebrahim37'>github</TextLink>
 						<TextLink external href='https://www.linkedin.com/in/ebrahim-hagh'>
 							linkedin
@@ -72,17 +72,13 @@ export default function About() {
 						))}
 					</ItemGroup>
 				</section>
-				<section className='flex flex-col gap-2'>
+				<section>
 					<Heading>This site</Heading>
 					<p>
 						This site is built with{' '}
 						<TextLink external href='https://waku.gg/' translate='no'>Waku</TextLink> and{' '}
 						<TextLink external href='https://ui.shadcn.com/' translate='no'>shadcn/ui</TextLink>,
-						and hosted on Cloudflare Pages. Its visual design is inspired by{' '}
-						<TextLink external href='https://maxleiter.com/'>Max Leiter’s website</TextLink>.
-					</p>
-					<p>
-						You can view the source{' '}
+						and hosted on Cloudflare Pages. You can view the source{' '}
 						<TextLink external href='https://github.com/ebrahim37/blog'>here</TextLink>.
 					</p>
 				</section>

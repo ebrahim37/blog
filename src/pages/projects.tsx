@@ -107,7 +107,7 @@ const PROJECTS = [
 export default function Projects() {
 	return (
 		<>
-			<title>Projects | Ebrahim Haghshenas</title>
+			<title>Projects | ebra.dev</title>
 			<meta
 				name='description'
 				content='Selected full-stack, infrastructure, systems, and graphics projects by Ebrahim Haghshenas.'
@@ -116,7 +116,7 @@ export default function Projects() {
 			<ItemGroup className='mb-10 grid gap-2 min-[700px]:grid-cols-2'>
 				{PROJECTS.map(project => (
 					<ExternalItem key={project.name} href={project.href}>
-						<ItemTitle>
+						<ItemTitle className='items-baseline'>
 							{project.name}
 							<span className='font-sans text-xs font-normal text-muted-foreground tabular-nums'>
 								{project.period}
@@ -130,7 +130,7 @@ export default function Projects() {
 								<Badge
 									key={tech}
 									variant='outline'
-									className='rounded-sm bg-muted px-1.5 font-normal text-muted-foreground'
+									className='h-6 rounded-lg bg-muted px-1.5 font-normal text-muted-foreground'
 								>
 									{tech}
 								</Badge>

@@ -62,9 +62,4 @@ For more information, read the [TypeScript documentation](https://www.example.co
 At one time, you might have believed that ~~TypeScript requires a complicated setup~~. For a basic project, only a few files are necessary.
 
 ![A placeholder image](https://placehold.co/400)
-<figcaption>
-    Placeholder caption.
-    <a href="https://placehold.co" target="_blank" rel="noreferrer">
-        source
-    </a>
-</figcaption>
+*Placeholder caption. [source](https://placehold.co)*

@@ -4,7 +4,7 @@ import { TextLink } from '@/components/text-link';
 export default function NotFound() {
 	return (
 		<>
-			<title>Page not found | Ebrahim Haghshenas</title>
+			<title>Page not found | ebra.dev</title>
 			<PageHeading>404/</PageHeading>
 			<p className='mb-4 text-muted-foreground'>The requested page could not be found.</p>
 			<TextLink href='/'>Return to the blog</TextLink>

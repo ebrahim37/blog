@@ -26,7 +26,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 							className={buttonVariants({
 								variant: 'ghost',
 								size: 'icon-lg',
-								className: 'text-muted-foreground',
+								className: 'rounded-[0.375rem] text-muted-foreground',
 							})}
 						>
 							<RssIcon />

@@ -4,7 +4,7 @@
         <title>Ebrahim Haghshenas</title>
         <link>https://ebra.dev/</link>
         <description>Posts by Ebrahim Haghshenas.</description>
-        <lastBuildDate>Thu, 12 Nov 2026 07:06:18 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 12 Nov 2026 08:38:15 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -79,13 +79,8 @@ const c = 3;
 </tbody>
 </table>
 <p>At one time, you might have believed that <del>TypeScript requires a complicated setup</del>. For a basic project, only a few files are necessary.</p>
-<p><img src="https://placehold.co/400" alt="A placeholder image"></p>
-<figcaption>
-    Placeholder caption.
-    <a href="https://placehold.co" target="_blank" rel="noreferrer">
-        source
-    </a>
-</figcaption>]]></content:encoded>
+<p><img src="https://placehold.co/400" alt="A placeholder image">
+<em>Placeholder caption. <a href="https://placehold.co">source</a></em></p>]]></content:encoded>
             <author>sayhi@ebra.dev (Ebrahim Haghshenas)</author>
         </item>
     </channel>

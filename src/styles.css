@@ -2,7 +2,6 @@
 @import 'shadcn/tailwind.css';
 @import '@fontsource-variable/geist';
 @import '@fontsource-variable/geist-mono';
-@plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -72,25 +71,39 @@
 	}
 }
 
-.prose {
-	--tw-prose-body: var(--foreground);
-	--tw-prose-headings: var(--primary);
-	--tw-prose-bold: var(--primary);
-	--tw-prose-links: var(--link);
-	--tw-prose-code: var(--primary);
-	--tw-prose-quotes: var(--muted-foreground);
-	--tw-prose-quote-borders: var(--border);
-	--tw-prose-captions: var(--muted-foreground);
-	--tw-prose-bullets: var(--muted-foreground);
-	--tw-prose-counters: var(--muted-foreground);
-	--tw-prose-hr: var(--border);
-	--tw-prose-th-borders: var(--border);
-	--tw-prose-td-borders: var(--border);
-}
+.markdown {
+	@apply leading-[1.7] wrap-anywhere text-primary;
 
-.prose :is(blockquote p, code)::before,
-.prose :is(blockquote p, code)::after {
-	content: none;
+	& > * + * { @apply mt-4; }
+	& > p { @apply text-foreground; }
+	& strong { @apply font-semibold; }
+	& a { @apply text-link hover:underline; }
+	& :is(h1, h2, h3, h4, h5, h6) { @apply scroll-mt-4 font-mono font-semibold; }
+	& h1 { font-size: 1.8rem; }
+	& h2 { font-size: 1.6rem; }
+	& h3 { font-size: 1.4rem; }
+	& h4 { font-size: 1.2rem; }
+	& h6 { @apply text-muted-foreground; }
+	& :is(ul, ol) { @apply my-4; }
+	& ul { @apply list-disc pl-9.5; }
+	& ol { @apply list-decimal pl-8; }
+	& li > :is(ul, ol) { @apply my-0; }
+	& li > p + p { @apply mt-2; }
+	& .contains-task-list { @apply list-none pl-4; }
+	& .task-list-item > input { @apply me-2 align-middle; }
+	& blockquote > * + * { @apply mt-2; }
+	& blockquote {
+		@apply my-4 border-l-3 border-l-[#dedede] pl-4 text-muted-foreground italic dark:border-l-[#444];
+	}
+	& hr { @apply border-t; }
+	& :is(img, video) { @apply mx-auto my-4 block h-auto max-w-full rounded-lg border; }
+	& figcaption { @apply mt-1 text-center text-[0.85rem] text-muted-foreground; }
+	& table { @apply my-4 w-full text-sm/[1.7]; }
+	& :is(th, td) { @apply border-b px-4 py-2.5 text-left align-top first:pl-0 last:pr-0; }
+	& th { @apply font-semibold; }
+	& kbd { @apply rounded-[5px] border border-b-2 px-1 font-mono text-sm; }
+	& .footnotes { @apply mt-8 border-t pt-4 text-sm text-muted-foreground; }
+	& :not(pre) > code { @apply rounded-[5px] bg-muted px-1 py-0.5 font-mono text-sm; }
 }
 
 /* page fade: React's <ViewTransition name='page'> on client navigation, plus full page loads */
