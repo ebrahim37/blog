@@ -2,14 +2,11 @@
 
 import { MoonIcon, SunIcon } from 'lucide-react';
 
-import { Button } from '@/components/shad/button';
-
 export const ThemeToggle = () => (
-	<Button
-		variant='ghost'
-		size='icon-lg'
+	<button
+		type='button'
 		aria-label='Toggle theme'
-		className='rounded-[0.375rem] text-muted-foreground'
+		className='nav-icon'
 		onClick={() => {
 			const dark = document.documentElement.classList.toggle('dark');
 			localStorage.setItem('theme', dark ? 'dark' : 'light');
@@ -19,5 +16,5 @@ export const ThemeToggle = () => (
 	>
 		<MoonIcon className='dark:hidden' />
 		<SunIcon className='hidden dark:block' />
-	</Button>
+	</button>
 );

@@ -58,6 +58,11 @@
 	--destructive: oklch(0.704 0.191 22.216);
 }
 
+@utility nav-icon {
+	@apply inline-flex h-10 w-11 items-center justify-center text-muted-foreground transition-colors;
+	@apply duration-100 hover:text-foreground [&_svg]:size-4.5;
+}
+
 @layer base {
 	* {
 		@apply border-border outline-ring/50;

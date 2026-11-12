@@ -5,7 +5,6 @@ import RssIcon from 'lucide-react/icons/rss';
 
 import { NavLink } from '@/components/nav-link';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { buttonVariants } from '@/components/shad/button';
 
 export default function Layout({ children }: { children: ReactNode }) {
 	return (
@@ -23,11 +22,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 							href='/rss.xml'
 							target='_blank'
 							aria-label='RSS feed'
-							className={buttonVariants({
-								variant: 'ghost',
-								size: 'icon-lg',
-								className: 'rounded-[0.375rem] text-muted-foreground',
-							})}
+							className='nav-icon'
 						>
 							<RssIcon />
 						</a>
