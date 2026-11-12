@@ -1,7 +1,7 @@
-import { ExternalItem } from '@/components/external-item';
+import { ExternalItem, ItemDescription, ItemTitle } from '@/components/item';
 import { PageHeading } from '@/components/page-heading';
 import { TextLink } from '@/components/text-link';
-import { ItemDescription, ItemGroup, ItemTitle } from '@/components/shad/item';
+import { ItemGroup } from '@/components/shad/item';
 
 const RESUME_LINK = 'https://drive.google.com/file/d/1ZqPFToCU4kQDG6dCo4Z0z7QGLY_1xBYG/view';
 
@@ -26,21 +26,32 @@ const EXPERIENCE = [
 	},
 ];
 
-const Heading = ({ children }: { children: string }) => <h2 className='mb-3 font-mono text-xl font-bold text-primary'>{children}</h2>;
+const Heading = ({ children }: { children: string }) => (
+	<h2 className='mb-3 font-mono text-xl font-bold text-primary'>{children}</h2>
+);
 
 export default function About() {
 	return (
 		<>
 			<title>About | Ebrahim Haghshenas</title>
-			<meta name='description' content='Ebrahim Haghshenas is a software engineer and AI training specialist who builds full-stack systems, developer tools, and infrastructure.' />
+			<meta
+				name='description'
+				content='Ebrahim Haghshenas is a software engineer and AI training specialist who builds full-stack systems, developer tools, and infrastructure.'
+			/>
 			<PageHeading>about/</PageHeading>
 			<div className='flex flex-col gap-6 leading-relaxed text-muted-foreground'>
 				<section>
 					<Heading>Ebrahim Haghshenas</Heading>
-					<p>I’m a new-grad software engineer interested in full-stack systems, Linux infrastructure, developer tooling, and building software that stays understandable.</p>
+					<p>
+						I’m a new-grad software engineer interested in full-stack systems,
+						Linux infrastructure, developer tooling, and building software
+						that stays understandable.
+					</p>
 					<div className='mt-8 flex flex-wrap gap-4'>
 						<TextLink external href='https://github.com/ebrahim37'>github</TextLink>
-						<TextLink external href='https://www.linkedin.com/in/ebrahim-hagh'>linkedin</TextLink>
+						<TextLink external href='https://www.linkedin.com/in/ebrahim-hagh'>
+							linkedin
+						</TextLink>
 						<TextLink href='mailto:sayhi@ebra.dev'>email</TextLink>
 						<TextLink external href={RESUME_LINK}>resume</TextLink>
 					</div>
@@ -51,8 +62,12 @@ export default function About() {
 						{EXPERIENCE.map(position => (
 							<ExternalItem key={position.title} href={position.href}>
 								<ItemTitle>{position.title}</ItemTitle>
-								<p className='text-xs text-muted-foreground tabular-nums'>{position.period}</p>
-								<ItemDescription className='mt-1'>{position.description}</ItemDescription>
+								<p className='text-xs text-muted-foreground tabular-nums'>
+									{position.period}
+								</p>
+								<ItemDescription className='mt-1'>
+									{position.description}
+								</ItemDescription>
 							</ExternalItem>
 						))}
 					</ItemGroup>
@@ -60,9 +75,16 @@ export default function About() {
 				<section className='flex flex-col gap-2'>
 					<Heading>This site</Heading>
 					<p>
-						This site is built with <TextLink external href='https://waku.gg/' translate='no'>Waku</TextLink> and <TextLink external href='https://ui.shadcn.com/' translate='no'>shadcn/ui</TextLink>, and hosted on Cloudflare Pages. Its visual design is inspired by <TextLink external href='https://maxleiter.com/'>Max Leiter’s website</TextLink>.
+						This site is built with{' '}
+						<TextLink external href='https://waku.gg/' translate='no'>Waku</TextLink> and{' '}
+						<TextLink external href='https://ui.shadcn.com/' translate='no'>shadcn/ui</TextLink>,
+						and hosted on Cloudflare Pages. Its visual design is inspired by{' '}
+						<TextLink external href='https://maxleiter.com/'>Max Leiter’s website</TextLink>.
 					</p>
-					<p>You can view the source <TextLink external href='https://github.com/ebrahim37/blog'>here</TextLink>.</p>
+					<p>
+						You can view the source{' '}
+						<TextLink external href='https://github.com/ebrahim37/blog'>here</TextLink>.
+					</p>
 				</section>
 			</div>
 		</>

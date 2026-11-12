@@ -1,7 +1,7 @@
-import { ExternalItem } from '@/components/external-item';
+import { ExternalItem, ItemDescription, ItemTitle } from '@/components/item';
 import { PageHeading } from '@/components/page-heading';
 import { Badge } from '@/components/shad/badge';
-import { ItemDescription, ItemGroup, ItemTitle } from '@/components/shad/item';
+import { ItemGroup } from '@/components/shad/item';
 
 const PROJECTS = [
 	{
@@ -108,15 +108,33 @@ export default function Projects() {
 	return (
 		<>
 			<title>Projects | Ebrahim Haghshenas</title>
-			<meta name='description' content='Selected full-stack, infrastructure, systems, and graphics projects by Ebrahim Haghshenas.' />
+			<meta
+				name='description'
+				content='Selected full-stack, infrastructure, systems, and graphics projects by Ebrahim Haghshenas.'
+			/>
 			<PageHeading>projects/</PageHeading>
 			<ItemGroup className='mb-10 grid gap-2 min-[700px]:grid-cols-2'>
 				{PROJECTS.map(project => (
 					<ExternalItem key={project.name} href={project.href}>
-						<ItemTitle>{project.name}<span className='font-sans text-xs font-normal text-muted-foreground tabular-nums'>{project.period}</span></ItemTitle>
-						<ItemDescription className='mb-1 flex-1'>{project.description}</ItemDescription>
+						<ItemTitle>
+							{project.name}
+							<span className='font-sans text-xs font-normal text-muted-foreground tabular-nums'>
+								{project.period}
+							</span>
+						</ItemTitle>
+						<ItemDescription className='mb-1 flex-1'>
+							{project.description}
+						</ItemDescription>
 						<div className='flex flex-wrap gap-1.5' translate='no'>
-							{project.technologies.map(tech => <Badge key={tech} variant='outline' className='rounded-sm bg-muted px-1.5 font-normal text-muted-foreground'>{tech}</Badge>)}
+							{project.technologies.map(tech => (
+								<Badge
+									key={tech}
+									variant='outline'
+									className='rounded-sm bg-muted px-1.5 font-normal text-muted-foreground'
+								>
+									{tech}
+								</Badge>
+							))}
 						</div>
 					</ExternalItem>
 				))}

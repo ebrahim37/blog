@@ -13,7 +13,8 @@ export const ThemeToggle = () => (
 		onClick={() => {
 			const dark = document.documentElement.classList.toggle('dark');
 			localStorage.setItem('theme', dark ? 'dark' : 'light');
-			document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#000000' : '#ffffff');
+			const color = dark ? '#000000' : '#ffffff';
+			document.querySelector('meta[name="theme-color"]')?.setAttribute('content', color);
 		}}
 	>
 		<MoonIcon className='dark:hidden' />

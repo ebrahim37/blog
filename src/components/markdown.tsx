@@ -1,9 +1,19 @@
+import type { CSSProperties } from 'react';
 import Markdown, { type ExtraProps } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import { createHighlighterCore } from 'shiki/core';
+import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 
-import { CodeBlock, CodeBlockActions, CodeBlockContent, CodeBlockCopyButton, CodeBlockHeader, CodeBlockLine, CodeBlockTitle } from '@/components/shad/code-block';
-import { highlightCode } from '@/lib/highlighter';
+import {
+	CodeBlock,
+	CodeBlockActions,
+	CodeBlockContent,
+	CodeBlockCopyButton,
+	CodeBlockHeader,
+	CodeBlockLine,
+	CodeBlockTitle,
+} from '@/components/shad/code-block';
 
 // keep fence meta (the title, e.g. ```ts file.ts) as an attribute, since rehype-raw drops node.data
 type MdNode = {
@@ -17,6 +27,44 @@ const remarkCodeMeta = () => function walk(node: MdNode) {
 	node.children?.forEach(walk);
 };
 
+const highlighter = createHighlighterCore({
+	themes: [import('shiki/themes/vitesse-light.mjs'), import('shiki/themes/vitesse-dark.mjs')],
+	langs: [
+		import('shiki/langs/typescript.mjs'),
+		import('shiki/langs/tsx.mjs'),
+		import('shiki/langs/json.mjs'),
+		import('shiki/langs/shellscript.mjs'),
+		import('shiki/langs/yaml.mjs'),
+		import('shiki/langs/nix.mjs'),
+	],
+	engine: createJavaScriptRegexEngine({ forgiving: true }),
+});
+
+const highlightCode = async (code: string, lang: string) => {
+	const shiki = await highlighter;
+	if (!shiki.getLoadedLanguages().includes(lang))
+		return null;
+
+	const { tokens } = shiki.codeToTokens(code, {
+		lang,
+		themes: {
+			light: 'vitesse-light',
+			dark: 'vitesse-dark'
+		},
+		defaultColor: false
+	});
+
+	return tokens.map(line => line.map((token, i) => (
+		<span
+			key={i}
+			style={token.htmlStyle as CSSProperties}
+			className='text-(--shiki-light) dark:text-(--shiki-dark)'
+		>
+			{token.content}
+		</span>
+	)));
+};
+
 const Pre = async ({ node }: ExtraProps) => {
 	const { properties, children: [text] } = node!.children[0] as typeof node & {};
 	const code = (text as { value: string }).value.replace(/\n$/, '');
@@ -27,8 +75,15 @@ const Pre = async ({ node }: ExtraProps) => {
 
 	return (
 		<CodeBlock className='not-prose my-4 bg-muted/60'>
-			{title ? <CodeBlockHeader><CodeBlockTitle className='font-mono'>{title}</CodeBlockTitle>{actions}</CodeBlockHeader> : actions}
-			<CodeBlockContent>{lines.map((line, i) => <CodeBlockLine key={i}>{line}</CodeBlockLine>)}</CodeBlockContent>
+			{title ? (
+				<CodeBlockHeader>
+					<CodeBlockTitle className='font-mono'>{title}</CodeBlockTitle>
+					{actions}
+				</CodeBlockHeader>
+			) : actions}
+			<CodeBlockContent>
+				{lines.map((line, i) => <CodeBlockLine key={i}>{line}</CodeBlockLine>)}
+			</CodeBlockContent>
 		</CodeBlock>
 	);
 };

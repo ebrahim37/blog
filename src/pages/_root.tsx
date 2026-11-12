@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 
 // runs before paint so the saved/system theme never flashes
 const themeScript = `try {
-	if ((localStorage.getItem('theme') ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')) === 'dark') {
+	const system = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	if ((localStorage.getItem('theme') ?? system) === 'dark') {
 		document.documentElement.classList.add('dark');
 		document.querySelector('meta[name="theme-color"]').content = '#000000';
 	}
@@ -17,7 +18,11 @@ export default function Root({ children }: { children: ReactNode }) {
 				<meta name='theme-color' content='#ffffff' />
 				<link rel='icon' href='data:image/png;base64,iVBORw0KGgo=' />
 				<script dangerouslySetInnerHTML={{ __html: themeScript }} />
-				<script src='https://heartbeat.ebra.dev/api/script.js' data-site-id='a6c00916053e' defer />
+				<script
+					src='https://heartbeat.ebra.dev/api/script.js'
+					data-site-id='a6c00916053e'
+					defer
+				/>
 			</head>
 			<body>{children}</body>
 		</html>

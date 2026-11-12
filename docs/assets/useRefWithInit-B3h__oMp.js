@@ -1,1 +1,0 @@
-import{c as e,l as t}from"./index-GYgh1IM3.js";var n=t(e(),1),r={};function i(e,t){let i=n.useRef(r);return i.current===r&&(i.current=e(t)),i}export{i as t};
