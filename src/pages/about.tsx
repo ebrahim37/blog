@@ -1,4 +1,4 @@
-import { ExternalItem, ItemDescription, ItemMeta, ItemTitle } from '@/components/item';
+import { ItemDescription, ItemMeta, ItemTitle, LinkItem } from '@/components/item';
 import { Meta } from '@/components/meta';
 import { PageHeading } from '@/components/page-heading';
 import { TextLink } from '@/components/text-link';
@@ -62,13 +62,13 @@ export default function About() {
 					<Heading>Experience</Heading>
 					<ItemGroup className='gap-2'>
 						{EXPERIENCE.map(position => (
-							<ExternalItem key={position.title} href={position.href}>
+							<LinkItem external key={position.title} href={position.href}>
 								<ItemTitle>{position.title}</ItemTitle>
 								<ItemMeta>{position.period}</ItemMeta>
 								<ItemDescription className='mt-1'>
 									{position.description}
 								</ItemDescription>
-							</ExternalItem>
+							</LinkItem>
 						))}
 					</ItemGroup>
 				</section>

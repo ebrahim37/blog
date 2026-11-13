@@ -6,6 +6,8 @@ import { ClientScript } from '@/components/client-script';
 import { Router } from '@/components/router';
 import { ThemeScript, ThemeToggle } from '@/components/theme';
 import { rss } from '@/rss';
+import geistMono from '@/fonts/geist-mono.woff2';
+import geist from '@/fonts/geist.woff2';
 import css from '@/styles.css?inline';
 
 type Page = { routes: string[], default: FunctionComponent<{ path: string }> };
@@ -21,6 +23,8 @@ const Root = ({ path, children }: { path: string, children: ReactNode }) => (
 			<meta name='viewport' content='width=device-width, initial-scale=1' />
 			<meta name='theme-color' content='#ffffff' />
 			<link rel='icon' href='data:image/png;base64,iVBORw0KGgo=' />
+			<link rel='preload' href={geist} as='font' type='font/woff2' crossOrigin='' />
+			<link rel='preload' href={geistMono} as='font' type='font/woff2' crossOrigin='' />
 			<style dangerouslySetInnerHTML={{ __html: css }} />
 			<ThemeScript />
 			<Router />

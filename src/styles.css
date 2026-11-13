@@ -1,9 +1,23 @@
 @import 'tailwindcss';
 @import 'shadcn/tailwind.css';
-@import '@fontsource-variable/geist';
-@import '@fontsource-variable/geist-mono';
 
 @custom-variant dark (&:is(.dark *));
+
+/* latin subsets of geist (OFL, see fonts/OFL.txt), preloaded in root.tsx. block: text waits for
+   the font instead of showing a fallback, so it never swaps fonts mid-load */
+@font-face {
+	font-family: 'Geist';
+	font-weight: 100 900;
+	font-display: block;
+	src: url('./fonts/geist.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Geist Mono';
+	font-weight: 100 900;
+	font-display: block;
+	src: url('./fonts/geist-mono.woff2') format('woff2');
+}
 
 /* hover styles also show while pressing, so touch screens (which can't hover) get them too */
 @custom-variant hover {
@@ -14,8 +28,8 @@
 }
 
 @theme inline {
-	--font-sans: 'Geist Variable', sans-serif;
-	--font-mono: 'Geist Mono Variable', monospace;
+	--font-sans: 'Geist', sans-serif;
+	--font-mono: 'Geist Mono', monospace;
 	--font-heading: var(--font-mono);
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);

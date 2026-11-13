@@ -1,4 +1,4 @@
-import { ExternalItem, ItemDescription, ItemMeta, ItemTitle } from '@/components/item';
+import { ItemDescription, ItemMeta, ItemTitle, LinkItem } from '@/components/item';
 import { Meta } from '@/components/meta';
 import { PageHeading } from '@/components/page-heading';
 import { Badge } from '@/components/shad/badge';
@@ -117,7 +117,7 @@ export default function Projects() {
 			<PageHeading>projects/</PageHeading>
 			<ItemGroup className='mb-10 grid gap-2 min-[700px]:grid-cols-2'>
 				{PROJECTS.map(project => (
-					<ExternalItem key={project.name} href={project.href}>
+					<LinkItem external key={project.name} href={project.href}>
 						<ItemTitle className='items-baseline'>
 							{project.name}
 							<ItemMeta className='font-sans font-normal'>{project.period}</ItemMeta>
@@ -136,7 +136,7 @@ export default function Projects() {
 								</Badge>
 							))}
 						</div>
-					</ExternalItem>
+					</LinkItem>
 				))}
 			</ItemGroup>
 		</>
