@@ -33,7 +33,7 @@ The build command prerenders the site and writes static output to `docs/`.
 ```text
 posts/       Markdown blog posts
 public/      Static files copied into the build
-src/pages/   Page components, mapped to URLs in src/render.tsx (src/rss.ts generates the RSS feed)
+src/pages/   Pages, each exporting its URLs as `routes` (rendered by src/root.tsx)
 docs/        Generated static site
 ```
 

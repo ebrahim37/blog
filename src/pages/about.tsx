@@ -1,4 +1,4 @@
-import { ExternalItem, ItemDescription, ItemTitle } from '@/components/item';
+import { ExternalItem, ItemDescription, ItemMeta, ItemTitle } from '@/components/item';
 import { Meta } from '@/components/meta';
 import { PageHeading } from '@/components/page-heading';
 import { TextLink } from '@/components/text-link';
@@ -64,9 +64,7 @@ export default function About() {
 						{EXPERIENCE.map(position => (
 							<ExternalItem key={position.title} href={position.href}>
 								<ItemTitle>{position.title}</ItemTitle>
-								<p className='text-xs text-muted-foreground tabular-nums'>
-									{position.period}
-								</p>
+								<ItemMeta>{position.period}</ItemMeta>
 								<ItemDescription className='mt-1'>
 									{position.description}
 								</ItemDescription>

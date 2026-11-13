@@ -6,7 +6,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeRaw from 'rehype-raw';
 import rehypeStringify from 'rehype-stringify';
 
-import { getPosts } from '@/lib/posts';
+import { POSTS } from '@/posts';
 
 const toHtml = unified()
 	.use(remarkParse)
@@ -31,7 +31,7 @@ export const rss = async () => {
 		author,
 		feedLinks: { rss: `${author.link}/rss.xml` },
 	});
-	for (const post of getPosts()) {
+	for (const post of POSTS) {
 		feed.addItem({
 			title: post.title,
 			link: `${author.link}/posts/${post.slug}`,

@@ -29,3 +29,8 @@ export const ItemTitle = ({ className, ...props }: ComponentProps<typeof Shad.It
 export const ItemDescription = ({ className, ...props }: ComponentProps<'p'>) => (
 	<Shad.ItemDescription className={cn('line-clamp-none leading-5', className)} {...props} />
 );
+
+// the small grey line in an item: dates, periods
+export const ItemMeta = ({ className, ...props }: ComponentProps<'p'>) => (
+	<p className={cn('text-xs text-muted-foreground tabular-nums', className)} {...props} />
+);

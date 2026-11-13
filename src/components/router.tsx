@@ -13,15 +13,16 @@ export const Router = () => (
 		const load = (path: string) => pages[path] ??= fetch(path).then(res => res.text());
 		let current = location.pathname;
 
-		// a link to another page of this site, opened normally (no new tab, download or modifiers)
-		const internal = (event: MouseEvent) => {
+		// calls `handle` for links to another page of this site, opened normally
+		// (no new tab, download or modifier keys)
+		const onLink = (handle: (url: URL, event: MouseEvent) => void) => (event: MouseEvent) => {
 			const link = (event.target as Element).closest?.('a');
 			if (!link || link.target || link.hasAttribute('download')
 				|| event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
 				return;
 			const url = new URL(link.href);
 			if (url.origin === location.origin && !(url.pathname === location.pathname && url.hash))
-				return url;
+				handle(url, event);
 		};
 
 		// scroll is given when going back/forward, to restore that entry's position
@@ -56,17 +57,10 @@ export const Router = () => (
 			if (location.pathname !== current)
 				navigate(new URL(location.href), event.state?.scroll ?? 0);
 		});
-		document.addEventListener('pointerover', event => {
-			const url = internal(event);
-			if (url)
-				load(url.pathname);
-		});
-		document.addEventListener('click', event => {
-			const url = internal(event);
-			if (url) {
-				event.preventDefault();
-				navigate(url);
-			}
-		});
+		document.addEventListener('pointerover', onLink(url => load(url.pathname)));
+		document.addEventListener('click', onLink((url, event) => {
+			event.preventDefault();
+			navigate(url);
+		}));
 	}} />
 );

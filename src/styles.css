@@ -58,6 +58,11 @@
 	--destructive: oklch(0.704 0.191 22.216);
 }
 
+@utility nav-link {
+	@apply inline-flex h-10 min-w-11 items-center justify-center px-1 text-sm font-medium;
+	@apply underline-offset-4 hover:underline aria-[current]:underline;
+}
+
 @utility nav-icon {
 	@apply inline-flex h-10 w-11 items-center justify-center text-muted-foreground transition-colors;
 	@apply duration-100 hover:text-foreground [&_svg]:size-4.5 [&_svg]:stroke-[2.25];
@@ -112,6 +117,10 @@
 }
 
 /* page fade, run by the view transition in components/router.tsx */
+main {
+	view-transition-name: page;
+}
+
 ::view-transition-group(page) {
 	animation: none;
 }

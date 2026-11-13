@@ -1,4 +1,4 @@
-import { ExternalItem, ItemDescription, ItemTitle } from '@/components/item';
+import { ExternalItem, ItemDescription, ItemMeta, ItemTitle } from '@/components/item';
 import { Meta } from '@/components/meta';
 import { PageHeading } from '@/components/page-heading';
 import { Badge } from '@/components/shad/badge';
@@ -120,9 +120,7 @@ export default function Projects() {
 					<ExternalItem key={project.name} href={project.href}>
 						<ItemTitle className='items-baseline'>
 							{project.name}
-							<span className='font-sans text-xs font-normal text-muted-foreground tabular-nums'>
-								{project.period}
-							</span>
+							<ItemMeta className='font-sans font-normal'>{project.period}</ItemMeta>
 						</ItemTitle>
 						<ItemDescription className='mb-1 flex-1'>
 							{project.description}
