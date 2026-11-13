@@ -4,6 +4,8 @@ import { PageHeading } from '@/components/page-heading';
 import { TextLink } from '@/components/text-link';
 import { ItemGroup } from '@/components/shad/item';
 
+export const routes = ['/about'];
+
 const RESUME_LINK = 'https://drive.google.com/file/d/1ZqPFToCU4kQDG6dCo4Z0z7QGLY_1xBYG/view';
 
 const EXPERIENCE = [

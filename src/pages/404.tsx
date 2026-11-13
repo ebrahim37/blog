@@ -2,6 +2,8 @@ import { Meta } from '@/components/meta';
 import { PageHeading } from '@/components/page-heading';
 import { TextLink } from '@/components/text-link';
 
+export const routes = ['/404'];
+
 export default function NotFound() {
 	return (
 		<>

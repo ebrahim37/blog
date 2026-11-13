@@ -4,6 +4,8 @@ import { PageHeading } from '@/components/page-heading';
 import { Badge } from '@/components/shad/badge';
 import { ItemGroup } from '@/components/shad/item';
 
+export const routes = ['/projects'];
+
 const PROJECTS = [
 	{
 		name: 'infra-template',

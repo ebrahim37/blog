@@ -1,10 +1,12 @@
 import { FormattedDate } from '@/components/date';
 import { PostMarkdown } from '@/components/markdown';
 import { Meta } from '@/components/meta';
-import { getPost } from '@/lib/posts';
+import { getPost, getPosts } from '@/lib/posts';
 
-export default function Post({ slug }: { slug: string }) {
-	const post = getPost(slug);
+export const routes = getPosts().map(post => `/posts/${post.slug}`);
+
+export default function Post({ path }: { path: string }) {
+	const post = getPost(path.replace('/posts/', ''));
 	return (
 		<article>
 			<Meta title={post.title} description={post.subtitle} />

@@ -8,6 +8,8 @@ import { PageHeading } from '@/components/page-heading';
 import { Item, ItemContent, ItemGroup } from '@/components/shad/item';
 import { getPosts } from '@/lib/posts';
 
+export const routes = ['/'];
+
 export default function Home() {
 	return (
 		<>
