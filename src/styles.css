@@ -111,11 +111,7 @@
 	& :not(pre) > code { @apply rounded-[5px] bg-muted px-1 py-0.5 font-mono text-sm; }
 }
 
-/* page fade: React's <ViewTransition name='page'> on client navigation, plus full page loads */
-@view-transition {
-	navigation: auto;
-}
-
+/* page fade, run by the view transition in components/router.tsx */
 ::view-transition-group(page) {
 	animation: none;
 }

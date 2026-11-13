@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import RssIcon from 'lucide-react/icons/rss';
 import { cn } from 'cn';
 
+import { Router } from '@/components/router';
 import { ThemeScript, ThemeToggle } from '@/components/theme';
 import css from '@/styles.css?inline';
 
@@ -14,6 +15,7 @@ export const Layout = ({ path, children }: { path: string, children: ReactNode }
 			<link rel='icon' href='data:image/png;base64,iVBORw0KGgo=' />
 			<style dangerouslySetInnerHTML={{ __html: css }} />
 			<ThemeScript />
+			<Router />
 			<script
 				src='https://heartbeat.ebra.dev/api/script.js'
 				data-site-id='a6c00916053e'
