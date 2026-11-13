@@ -3,33 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* latin subsets of geist (OFL, see fonts/OFL.txt), preloaded in root.tsx. block: text waits for
-   the font instead of showing a fallback, so it never swaps fonts mid-load */
-@font-face {
-	font-family: 'Geist';
-	font-weight: 100 900;
-	font-display: block;
-	src: url('./fonts/geist.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Geist Mono';
-	font-weight: 100 900;
-	font-display: block;
-	src: url('./fonts/geist-mono.woff2') format('woff2');
-}
-
-/* hover styles also show while pressing, so touch screens (which can't hover) get them too */
-@custom-variant hover {
-	@media (hover: hover) {
-		&:hover { @slot; }
-	}
-	&:active { @slot; }
-}
-
 @theme inline {
-	--font-sans: 'Geist', sans-serif;
-	--font-mono: 'Geist Mono', monospace;
+	/* system fonts closest to geist. named fonts come first since chrome on linux resolves
+	   system-ui unreliably: sf pro / sf mono on apple, segoe ui / cascadia mono or consolas on
+	   windows, roboto on android, adwaita (gnome), inter, ubuntu or noto on linux */
+	--font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Adwaita Sans', Inter,
+		Ubuntu, 'Noto Sans', system-ui, sans-serif;
+	--font-mono: ui-monospace, 'SF Mono', Menlo, 'Cascadia Mono', Consolas, 'Adwaita Mono',
+		'DejaVu Sans Mono', 'Ubuntu Mono', 'Liberation Mono', monospace;
 	--font-heading: var(--font-mono);
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
