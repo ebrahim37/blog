@@ -1,4 +1,5 @@
 import { ExternalItem, ItemDescription, ItemTitle } from '@/components/item';
+import { Meta } from '@/components/meta';
 import { PageHeading } from '@/components/page-heading';
 import { TextLink } from '@/components/text-link';
 import { ItemGroup } from '@/components/shad/item';
@@ -33,10 +34,9 @@ const Heading = ({ children }: { children: string }) => (
 export default function About() {
 	return (
 		<>
-			<title>About | ebra.dev</title>
-			<meta
-				name='description'
-				content='Ebrahim Haghshenas is a software engineer and AI training specialist who builds full-stack systems, developer tools, and infrastructure.'
+			<Meta
+				title='About'
+				description='Ebrahim Haghshenas is a software engineer and AI training specialist who builds full-stack systems, developer tools, and infrastructure.'
 			/>
 			<PageHeading>about/</PageHeading>
 			<div className='flex flex-col gap-6 leading-relaxed text-muted-foreground'>
@@ -76,7 +76,7 @@ export default function About() {
 					<Heading>This site</Heading>
 					<p>
 						This site is built with{' '}
-						<TextLink external href='https://waku.gg/' translate='no'>Waku</TextLink> and{' '}
+						<TextLink external href='https://vite.dev/' translate='no'>Vite</TextLink> and{' '}
 						<TextLink external href='https://ui.shadcn.com/' translate='no'>shadcn/ui</TextLink>,
 						and hosted on Cloudflare Pages. You can view the source{' '}
 						<TextLink external href='https://github.com/ebrahim37/blog'>here</TextLink>.

@@ -1,20 +1,16 @@
-import type { PageProps } from 'waku/router';
-
+import { FormattedDate } from '@/components/date';
 import { PostMarkdown } from '@/components/markdown';
-import { formatDate } from '@/lib/date';
-import { getPost, getPosts } from '@/lib/posts';
+import { Meta } from '@/components/meta';
+import { getPost } from '@/lib/posts';
 
-export default function PostPage({ slug }: PageProps<'/posts/[slug]'>) {
+export default function Post({ slug }: { slug: string }) {
 	const post = getPost(slug);
 	return (
 		<article>
-			<title>{post.title} | ebra.dev</title>
-			<meta name='description' content={post.subtitle} />
+			<Meta title={post.title} description={post.subtitle} />
 			<header className='font-mono text-primary'>
 				<div className='flex justify-between text-sm text-muted-foreground tabular-nums'>
-					<time dateTime={new Date(post.timestamp).toISOString()}>
-						{formatDate(post.timestamp)}
-					</time>
+					<FormattedDate timestamp={post.timestamp} />
 					<span>{post.minutes} min read</span>
 				</div>
 				<h1 className='my-2 pt-4 pb-2 text-3xl/10 font-bold text-balance'>{post.title}</h1>
@@ -26,8 +22,3 @@ export default function PostPage({ slug }: PageProps<'/posts/[slug]'>) {
 		</article>
 	);
 }
-
-export const getConfig = async () => ({
-	render: 'static',
-	staticPaths: getPosts().map(post => post.slug),
-} as const);

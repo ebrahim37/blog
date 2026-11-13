@@ -7,7 +7,7 @@
 		"moduleResolution": "bundler",
 		"moduleDetection": "force",
 		"jsx": "react-jsx",
-		"types": ["node"],
+		"types": ["node", "vite/client"],
 		"isolatedModules": true,
 		"allowImportingTsExtensions": true,
 		"noEmit": true,

@@ -65,7 +65,7 @@ const Pre = async ({ node }: ExtraProps) => {
 	const lines = await highlightCode(code, lang) ?? code.split('\n');
 	const filename = title?.split('/').pop() ?? `code.${lang || 'txt'}`;
 
-	return <CodeBlock code={code} lines={lines} title={title} filename={filename} />;
+	return <CodeBlock lines={lines} title={title} filename={filename} />;
 };
 
 // an image followed by an *italic* line becomes a figure, with that line as its caption

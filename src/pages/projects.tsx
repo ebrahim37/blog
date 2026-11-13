@@ -1,4 +1,5 @@
 import { ExternalItem, ItemDescription, ItemTitle } from '@/components/item';
+import { Meta } from '@/components/meta';
 import { PageHeading } from '@/components/page-heading';
 import { Badge } from '@/components/shad/badge';
 import { ItemGroup } from '@/components/shad/item';
@@ -107,10 +108,9 @@ const PROJECTS = [
 export default function Projects() {
 	return (
 		<>
-			<title>Projects | ebra.dev</title>
-			<meta
-				name='description'
-				content='Selected full-stack, infrastructure, systems, and graphics projects by Ebrahim Haghshenas.'
+			<Meta
+				title='Projects'
+				description='Selected full-stack, infrastructure, systems, and graphics projects by Ebrahim Haghshenas.'
 			/>
 			<PageHeading>projects/</PageHeading>
 			<ItemGroup className='mb-10 grid gap-2 min-[700px]:grid-cols-2'>

@@ -2,7 +2,9 @@
 
 Source code for my personal website/blog.
 
-The site is built with [Waku](https://waku.gg/) and [shadcn/ui](https://ui.shadcn.com/).
+The site is built with [Vite](https://vite.dev/), React and [shadcn/ui](https://ui.shadcn.com/).
+React only runs at build time: pages are rendered to static HTML with inlined CSS,
+and the only JavaScript shipped is small inline scripts (see `src/components/client-script.tsx`).
 
 ## Development
 
@@ -31,7 +33,7 @@ The build command prerenders the site and writes static output to `docs/`.
 ```text
 posts/       Markdown blog posts
 public/      Static files copied into the build
-src/pages/   Waku file-based routes (src/pages/_api/rss.xml.ts generates the RSS feed)
+src/pages/   Page components, mapped to URLs in src/render.tsx (src/rss.ts generates the RSS feed)
 docs/        Generated static site
 ```
 

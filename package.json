@@ -1,10 +1,9 @@
 {
 	"type": "module",
-	"private": true,
 	"scripts": {
-		"dev": "waku dev",
+		"dev": "vite",
 		"tc": "tsc --noEmit",
-		"build": "waku build && rm -rf docs && mv dist/public docs && rm -r dist",
+		"build": "vite build",
 		"push": "pnpm run build && git add -A && git commit -m \"update\" && git push"
 	},
 	"dependencies": {
@@ -15,14 +14,13 @@
 		"cn": "^0.5.2",
 		"lucide-react": "^1.71.0",
 		"react": "~19.3.1",
-		"react-dom": "~19.3.1",
-		"react-server-dom-webpack": "~19.3.1",
-		"waku": "^1.0.0-rc.5"
+		"react-dom": "~19.3.1"
 	},
 	"devDependencies": {
 		"@tailwindcss/vite": "^4.3.3",
 		"@types/node": "^26.6.2",
 		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0",
 		"feed": "^6.0.0",
 		"gray-matter": "^4.0.3",
 		"react-markdown": "^10.1.0",
@@ -35,6 +33,7 @@
 		"shiki": "^4.6.0",
 		"tailwindcss": "^4.3.3",
 		"typescript": "^7.0.2",
-		"unified": "^11.0.5"
+		"unified": "^11.0.5",
+		"vite": "8.3.8"
 	}
 }

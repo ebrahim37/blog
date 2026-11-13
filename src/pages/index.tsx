@@ -1,19 +1,17 @@
 import FileTextIcon from 'lucide-react/icons/file-text';
-import { Link } from 'waku';
 import { cn } from 'cn';
 
-import { PageHeading } from '@/components/page-heading';
-import { RelativeDate } from '@/components/relative-date';
+import { FormattedDate, RelativeDate } from '@/components/date';
 import { ItemDescription, ItemTitle } from '@/components/item';
+import { Meta } from '@/components/meta';
+import { PageHeading } from '@/components/page-heading';
 import { Item, ItemContent, ItemGroup } from '@/components/shad/item';
-import { formatDate } from '@/lib/date';
 import { getPosts } from '@/lib/posts';
 
 export default function Home() {
 	return (
 		<>
-			<title>Blog | ebra.dev</title>
-			<meta name='description' content="Ebrahim's Blog" />
+			<Meta title='Blog' description="Ebrahim's Blog" />
 			<PageHeading>posts/</PageHeading>
 			<ItemGroup className='gap-2'>
 				{getPosts().map(post => (
@@ -21,9 +19,7 @@ export default function Home() {
 						key={post.slug}
 						variant='outline'
 						className='p-3'
-						render={({ children, ...props }) => (
-							<Link {...props} to={`/posts/${post.slug}`}>{children}</Link>
-						)}
+						render={<a href={`/posts/${post.slug}`} />}
 					>
 						<ItemContent>
 							<ItemTitle>
@@ -39,7 +35,7 @@ export default function Home() {
 									<RelativeDate timestamp={post.timestamp} />
 								</span>
 								<span className='hidden group-hover/item:inline'>
-									{formatDate(post.timestamp)} · {post.minutes} min read
+									<FormattedDate timestamp={post.timestamp} /> · {post.minutes} min read
 								</span>
 							</p>
 						</ItemContent>

@@ -21,7 +21,7 @@ const author = {
 	link: 'https://ebra.dev'
 };
 
-export const GET = async () => {
+export const rss = async () => {
 	const feed = new Feed({
 		title: author.name,
 		id: author.link,
@@ -42,10 +42,5 @@ export const GET = async () => {
 			author: [author],
 		});
 	}
-	// application/xml rather than application/rss+xml, so browsers display it instead of downloading
-	return new Response(feed.rss2(), {
-		headers: { 'content-type': 'application/xml; charset=utf-8' },
-	});
+	return feed.rss2();
 };
-
-export const getConfig = async () => ({ render: 'static' } as const);
