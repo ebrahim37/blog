@@ -5,6 +5,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* hover styles also show while pressing, so touch screens (which can't hover) get them too */
+@custom-variant hover {
+	@media (hover: hover) {
+		&:hover { @slot; }
+	}
+	&:active { @slot; }
+}
+
 @theme inline {
 	--font-sans: 'Geist Variable', sans-serif;
 	--font-mono: 'Geist Mono Variable', monospace;

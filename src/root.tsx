@@ -2,6 +2,7 @@ import type { FunctionComponent, ReactNode } from 'react';
 import { prerender } from 'react-dom/static';
 import RssIcon from 'lucide-react/icons/rss';
 
+import { ClientScript } from '@/components/client-script';
 import { Router } from '@/components/router';
 import { ThemeScript, ThemeToggle } from '@/components/theme';
 import { rss } from '@/rss';
@@ -23,6 +24,10 @@ const Root = ({ path, children }: { path: string, children: ReactNode }) => (
 			<style dangerouslySetInnerHTML={{ __html: css }} />
 			<ThemeScript />
 			<Router />
+			{/* iOS Safari only shows :active (pressed) styles when the page listens for touches */}
+			<ClientScript run={() => {
+				document.addEventListener('touchstart', () => {}, { passive: true });
+			}} />
 			<script src='https://heartbeat.ebra.dev/api/script.js' data-site-id='a6c00916053e' defer />
 		</head>
 		<body>
