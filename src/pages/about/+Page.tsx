@@ -13,21 +13,21 @@ const RESUME_LINK = 'https://drive.google.com/file/d/1ZqPFToCU4kQDG6dCo4Z0z7QGLY
 
 const EXPERIENCE = [
 	{
-		title: 'Coding Data Annotator @ DataAnnotation',
+		title: 'AI Training Specialist (Coding) @ DataAnnotation',
 		period: '03/2024 - present',
-		description: 'Evaluate, compare, and improve code-focused LLM output across languages, frameworks, databases, and developer tooling. The work ranges from checking correctness to rewriting answers into complete, production-quality solutions.',
+		description: 'Help train coding-focused LLMs by evaluating and rewriting their work across languages, frameworks, databases, and developer tools. I also design agentic software-engineering tasks, reference solutions, and grading criteria that expose meaningful differences between models.',
 		href: 'https://www.dataannotation.tech/',
 	},
 	{
 		title: 'Undergraduate Research Assistant @ Queen’s University',
 		period: '05/2025 - 08/2025',
-		description: 'Worked under Professor Juergen Dingel in the MASE Lab, building a Python MCP server for TELUS’s corporate GitLab. It exposed repository tools with pagination, rate-limit handling, caching, structured logging, and onboarding documentation.',
+		description: 'Built a Python MCP server for TELUS’s corporate GitLab in Professor Juergen Dingel’s MASE Lab. The server exposed repository tools and resources with pagination, rate-limit handling, caching, structured logging, and onboarding documentation.',
 		href: 'https://labs.cs.queensu.ca/mase/',
 	},
 	{
-		title: 'Full-stack Developer Intern @ Myadcenter Inc.',
+		title: 'Full-stack Developer Intern @ Myadcenter',
 		period: '08/2021 - 01/2022',
-		description: 'Worked in a small Scrum team migrating a legacy PHP application to a Next.js, Express, and Redux stack. Daily stand-ups coordinated the rewrite across roughly five developers and a team lead.',
+		description: 'Worked in a small Scrum team migrating a legacy PHP application to Next.js, Express, and Redux. This was my first professional software role.',
 		href: 'https://www.crunchbase.com/organization/myadcenter',
 	},
 ];
@@ -35,7 +35,7 @@ const EXPERIENCE = [
 export function Page() {
 	useConfig()({
 		title: 'About | Ebrahim Haghshenas',
-		description: 'About Ebrahim Haghshenas.',
+		description: 'Ebrahim Haghshenas is a software engineer and AI training specialist who builds full-stack systems, developer tools, and infrastructure.',
 	});
 
 	return (
@@ -45,11 +45,13 @@ export function Page() {
 				<section>
 					<h2 class={styles.contentHeading}>Ebrahim Haghshenas</h2>
 					<p class={styles.intro}>
-						I’m a new grad software engineer interested in full-stack systems, Linux infrastructure, developer tooling, and building software that stays understandable.
+						I’m a new-grad software engineer interested in full-stack systems, Linux infrastructure, developer tooling, and building software that stays understandable.
 					</p>
 					<div class={styles.contactLinks}>
-						<ExternalLink component={TextLink} href={RESUME_LINK}>resume<span class={styles.visuallyHidden}>, opens in a new tab</span></ExternalLink>
+						<ExternalLink component={TextLink} href='https://github.com/ebrahim37'>github<span class={styles.visuallyHidden}>, opens in a new tab</span></ExternalLink>
+						<ExternalLink component={TextLink} href='https://www.linkedin.com/in/ebrahim-hagh'>linkedin<span class={styles.visuallyHidden}>, opens in a new tab</span></ExternalLink>
 						<TextLink href='mailto:sayhi@ebra.dev'>email</TextLink>
+						<ExternalLink component={TextLink} href={RESUME_LINK}>resume<span class={styles.visuallyHidden}>, opens in a new tab</span></ExternalLink>
 					</div>
 				</section>
 
@@ -73,11 +75,17 @@ export function Page() {
 					</ul>
 				</section>
 
+
 				<section>
 					<h2 class={styles.contentHeading}>This site</h2>
-					<p>
-						This site is built with <ExternalLink component={TextLink} href='https://www.solidjs.com/' translate='no'>SolidJS</ExternalLink> and <ExternalLink component={TextLink} href='https://vike.dev/' translate='no'>Vike</ExternalLink>. It is rendered to static HTML and deployed to Cloudflare Pages. Its visual design is inspired by <ExternalLink component={TextLink} href='https://maxleiter.com/'>Max Leiter’s website</ExternalLink>. You can view the source <ExternalLink component={TextLink} href='https://github.com/ebrahim37/blog'>here</ExternalLink>.
-					</p>
+					<div class={styles.siteCopy}>
+						<p>
+							This site is built with <ExternalLink component={TextLink} href='https://www.solidjs.com/' translate='no'>SolidJS</ExternalLink>+<ExternalLink component={TextLink} href='https://vike.dev/' translate='no'>Vike</ExternalLink> and hosted on Cloudflare Pages. Its visual design is inspired by <ExternalLink component={TextLink} href='https://maxleiter.com/'>Max Leiter’s website</ExternalLink>.
+						</p>
+						<p>
+							You can view the source <ExternalLink component={TextLink} href='https://github.com/ebrahim37/blog'>here</ExternalLink>.
+						</p>
+					</div>
 				</section>
 			</div>
 		</>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <link rel="stylesheet" type="text/css" href="/assets/static/src_components_Layout.BFY9aLGN.css">
+        <link rel="stylesheet" type="text/css" href="/assets/static/src_components_NavLink.nBjneoH4.css">
+        <link rel="stylesheet" type="text/css" href="/assets/static/src_components_Icons.4p26zWBK.css">
+        <link rel="stylesheet" type="text/css" href="/assets/static/src_global-3e99e49f.CRiOxGrB.css">
+        <link rel="stylesheet" type="text/css" href="/assets/static/src_pages_posts_-slug_Page.DutB8tjC.css">
+        <meta charset="UTF-8" />
+        
+    <title>Building Linux servers where only the data needs backing up</title><meta property="og:title" content="Building Linux servers where only the data needs backing up">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta data-hk="0000" charset="utf-8"><meta data-hk="0001" name="viewport" content="width=device-width, initial-scale=1"><meta data-hk="0002" name="theme-color" content="#ffffff"><link data-hk="0003" rel="icon" href="data:image/png;base64,iVBORw0KGgo="><link data-hk="0004" rel="preconnect" href="https://fonts.googleapis.com"><link data-hk="0005" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link data-hk="0006" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600;700&amp;display=swap"><script data-hk="0007">
+				try {
+					// startTheme is used in useTheme
+					var startTheme = 'light';
+					if (localStorage.getItem('theme')) {
+						startTheme = localStorage.getItem('theme');
+					} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+						startTheme = 'dark';
+					}
+					if (startTheme === 'dark') {
+						document.documentElement.classList.add('dark');
+						document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#000000');
+					}
+				} catch (error) {}
+			</script><script data-hk="0008" src="https://heartbeat.ebra.dev/api/script.js" data-site-id="a6c00916053e" defer></script>
+    
+    <meta name="description" content="How I use Fedora CoreOS, Podman Quadlets, and NixOS to make reproducible Linux machines."><meta property="og:description" content="How I use Fedora CoreOS, Podman Quadlets, and NixOS to make reproducible Linux machines.">
+    
+  
+        <script>window._$HY||(e=>{let t=e=>e&&e.hasAttribute&&(e.hasAttribute("data-hk")?e:t(e.host&&e.host.nodeType?e.host:e.parentNode));["click", "input"].forEach((o=>document.addEventListener(o,(o=>{if(!e.events)return;let s=t(o.composedPath&&o.composedPath()[0]||o.target);s&&!e.completed.has(s)&&e.events.push([s,o])}))))})(_$HY={events:[],completed:new WeakSet,r:{},fe(){}});</script><!--xs-->
+      </head>
+      <body>
+        <div id="root"><header data-hk="00000" class="_header_1tuql_1"><div class="_headerInner_1tuql_5"><nav aria-label="Primary navigation" class="_navigation_1tuql_19"><!--$--><a data-hk="000010" href="/" class="_link_1dmhi_1">blog</a><!--/--><!--$--><a data-hk="000020" href="/projects" class="_link_1dmhi_1">projects</a><!--/--><!--$--><a data-hk="000030" href="/about" class="_link_1dmhi_1">about</a><!--/--></nav><div class="_headerActions_1tuql_20"><button class="_iconButton_1tuql_34" type="button" aria-label="Switch to dark theme"><svg data-hk="000040" class="_headerIcon_1tuql_29" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.822 2.238a9 9 0 0 0 11.94 11.94C20.768 18.654 16.775 22 12 22 6.477 22 2 17.523 2 12c0-4.775 3.346-8.768 7.822-9.762zm8.342.053L19 2.5v1l-.836.209a2 2 0 0 0-1.455 1.455L16.5 6h-1l-.209-.836a2 2 0 0 0-1.455-1.455L13 3.5v-1l.836-.209A2 2 0 0 0 15.29.836L15.5 0h1l.209.836a2 2 0 0 0 1.455 1.455zm5 5L24 7.5v1l-.836.209a2 2 0 0 0-1.455 1.455L21.5 11h-1l-.209-.836a2 2 0 0 0-1.455-1.455L18 8.5v-1l.836-.209a2 2 0 0 0 1.455-1.455L20.5 5h1l.209.836a2 2 0 0 0 1.455 1.455z"></path></svg></button><!--$--><a data-hk="0000500" class="_iconButton_1tuql_34 " href="/rss.xml" aria-label="RSS feed (opens in a new tab)" target="_blank" rel="noreferrer"><svg data-hk="00005010" class="_headerIcon_1tuql_29" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3.5a1.5 1.5 0 1 0 0 3c6.893 0 12.5 5.607 12.5 12.5a1.5 1.5 0 0 0 3 0C20.5 10.453 13.547 3.5 5 3.5zm0 5a1.5 1.5 0 1 0 0 3A7.5 7.5 0 0 1 12.5 19a1.5 1.5 0 0 0 3 0C15.5 13.21 10.79 8.5 5 8.5zm0 7a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path></svg></a><!--/--></div></div></header><main data-hk="00006" class="_main_1tuql_6"><article data-hk="0000700"><header><div class="_meta_xvvux_1"><time class="_numeric_xvvux_13" datetime="2026-09-24T05:55:51.000Z">Sep 24, 2026</time><span><!--$-->1<!--/--> min read</span></div><h1 class="_title_xvvux_17">Building Linux servers where only the data needs backing up</h1><p class="_subtitle_xvvux_28">How I use Fedora CoreOS, Podman Quadlets, and NixOS to make reproducible Linux machines.</p></header><div class="_markdownArticle_xvvux_36"></div></article></main></div>
+        <script id="vike_pageContext" type="application/json">{"_configFromHook":{"title":"Building Linux servers where only the data needs backing up"},"pageId":"\/src\/pages\/posts\/@slug","routeParams":{"slug":"linux-servers-only-data-needs-backup"},"data":{"post":{"slug":"linux-servers-only-data-needs-backup","title":"Building Linux servers where only the data needs backing up","subtitle":"How I use Fedora CoreOS, Podman Quadlets, and NixOS to make reproducible Linux machines.","timestamp":1790229351000,"words":0,"minutes":1},"html":""}}</script>
+        <script id="vike_globalContext" type="application/json">{}</script>
+        <script src="/assets/entries/entry-client-routing.DSVE2UiA.js" type="module" async></script>
+        <link rel="modulepreload" href="/assets/entries/src_pages_posts_-slug.YUiHsGIy.js" as="script" type="text/javascript">
+        <link rel="modulepreload" href="/assets/chunks/chunk-B09NeRbF.js" as="script" type="text/javascript">
+        <link rel="modulepreload" href="/assets/chunks/chunk-7d70hahk.js" as="script" type="text/javascript">
+        <link rel="modulepreload" href="/assets/chunks/chunk-BEG9EdCq.js" as="script" type="text/javascript">
+        <link rel="modulepreload" href="/assets/chunks/chunk-WKOxPz6c.js" as="script" type="text/javascript">
+        <link rel="modulepreload" href="/assets/chunks/chunk-CSqYa9N9.js" as="script" type="text/javascript">
+        <link rel="modulepreload" href="/assets/chunks/chunk-Y1KVWe37.js" as="script" type="text/javascript">
+        <link rel="modulepreload" href="/assets/chunks/chunk-xw5zXCFJ.js" as="script" type="text/javascript">
+      </body>
+    </html>

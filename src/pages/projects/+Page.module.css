@@ -5,6 +5,13 @@
 	gap: 8px;
 }
 
+.titleRow {
+	display: flex;
+	align-items: baseline;
+	justify-content: flex-start;
+	gap: 8px;
+}
+
 .cardInner {
 	display: flex;
 	align-items: flex-start;
@@ -19,8 +26,16 @@
 	flex-direction: column;
 }
 
+.period {
+	margin-top: 0;
+	color: var(--gray);
+	font-size: 12px;
+	line-height: 16px;
+	font-variant-numeric: tabular-nums;
+}
+
 .description {
-	margin-block: 4px 8px;
+	margin-block: 8px;
 	color: var(--gray);
 	font-size: 14px;
 	line-height: 20px;

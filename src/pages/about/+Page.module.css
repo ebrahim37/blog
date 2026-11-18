@@ -18,11 +18,19 @@
 .intro {
 	margin-bottom: 16px;
 }
+.siteCopy {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+
 
 .contactLinks {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 16px;
+	margin-top: 16px;
 }
 
 .visuallyHidden {

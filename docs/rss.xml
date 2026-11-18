@@ -4,11 +4,19 @@
         <title>Ebrahim Haghshenas</title>
         <link>https://ebra.dev/</link>
         <description>Posts by Ebrahim Haghshenas.</description>
-        <lastBuildDate>Thu, 24 Sep 2026 05:04:05 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 11 Nov 2026 20:28:55 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <atom:link href="https://ebra.dev/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Building Linux servers where only the data needs backing up]]></title>
+            <link>https://ebra.dev/posts/linux-servers-only-data-needs-backup</link>
+            <guid isPermaLink="false">linux-servers-only-data-needs-backup</guid>
+            <pubDate>Thu, 24 Sep 2026 05:55:51 GMT</pubDate>
+            <description><![CDATA[How I use Fedora CoreOS, Podman Quadlets, and NixOS to make reproducible Linux machines.]]></description>
+            <author>sayhi@ebra.dev (Ebrahim Haghshenas)</author>
+        </item>
         <item>
             <title><![CDATA[Markdown Demo]]></title>
             <link>https://ebra.dev/posts/markdown-demo</link>
