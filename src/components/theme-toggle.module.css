@@ -1,0 +1,3 @@
+/* the moon in light mode, the sun in dark mode */
+.sun, :global(.dark) .moon { display: none; }
+:global(.dark) .sun { display: block; }

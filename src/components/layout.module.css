@@ -1,0 +1,66 @@
+.header { border-bottom-width: 1px; }
+
+.bar {
+	display: flex;
+	height: 2.5rem;
+	max-width: 48rem;
+	margin: auto;
+	padding: 0 1rem;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.nav {
+	display: flex;
+	gap: 0.25rem;
+
+	a {
+		display: grid;
+		place-items: center;
+		height: 2.5rem;
+		min-width: 2.75rem;
+		padding-inline: 0.25rem;
+		font: 500 0.875rem/1.25rem var(--sans);
+		text-underline-offset: 4px;
+
+		&[aria-current] { text-decoration-line: underline; }
+		@media (hover: hover) { &:hover { text-decoration-line: underline; } }
+		&:active { text-decoration-line: underline; }
+	}
+}
+
+.tools { display: flex; }
+
+/* the theme toggle and rss link */
+.tool {
+	display: grid;
+	place-items: center;
+	width: 2.75rem;
+	height: 2.5rem;
+	color: var(--muted-foreground);
+	transition: color 0.1s var(--ease);
+
+	@media (hover: hover) { &:hover { color: var(--foreground); } }
+	&:active { color: var(--foreground); }
+	svg { width: 1.125rem; height: 1.125rem; stroke-width: 2.25; }
+}
+
+.main {
+	max-width: 48rem;
+	min-height: calc(100dvh - 2.5rem - 1px);
+	margin: auto;
+	padding: 1.5rem 1.5rem 2.5rem;
+	view-transition-name: page;
+}
+
+/* page fade, run by the router (router.ts) */
+::view-transition-group(page) { animation: none; }
+::view-transition-old(page) { animation: 150ms ease-in both fade-out; }
+::view-transition-new(page) { animation: 150ms ease-out 150ms both fade-in; }
+
+@keyframes fade-out { to { opacity: 0; } }
+@keyframes fade-in { from { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+	::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}

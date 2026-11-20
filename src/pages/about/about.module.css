@@ -1,0 +1,15 @@
+.about {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	line-height: 1.625;
+	color: var(--muted-foreground);
+
+	h2 { margin-bottom: 0.75rem; font: 700 1.25rem/1.4 var(--mono); color: var(--primary); }
+}
+
+.links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+
+/* in the experience cards */
+.period { font: 0.75rem/1rem var(--sans); font-variant-numeric: tabular-nums; }
+.description { margin-top: 0.25rem; }

@@ -1,0 +1,1 @@
+export default '/rss.xml';

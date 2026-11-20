@@ -1,0 +1,6 @@
+.meta { margin-top: 0.25rem; font: 0.75rem/1rem var(--sans); font-variant-numeric: tabular-nums; }
+
+/* the relative date swaps for the full date and reading time on hover, or while pressing */
+.full { display: none; }
+@media (hover: hover) { a:hover { .relative { display: none; } .full { display: inline; } } }
+a:active { .relative { display: none; } .full { display: inline; } }

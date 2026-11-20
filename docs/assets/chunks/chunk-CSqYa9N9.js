@@ -1,1 +1,0 @@
-var e={externalLink:`_externalLink_10s94_1`,document:`_document_10s94_2`};export{e as t};

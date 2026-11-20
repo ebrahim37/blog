@@ -1,5 +1,3 @@
-import { getPosts } from '~/utils/posts.ts';
+import { POSTS } from '@/posts.ts';
 
-export function onBeforePrerenderStart() {
-	return getPosts().map(post => `/posts/${post.slug}`);
-}
+export const onBeforePrerenderStart = () => POSTS.map(post => post.href);

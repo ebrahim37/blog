@@ -1,0 +1,9 @@
+.link {
+	color: var(--link);
+	text-decoration-line: underline;
+	text-underline-offset: 3px;
+	transition: opacity 0.15s var(--ease);
+
+	@media (hover: hover) { &:hover { opacity: 0.8; } }
+	&:active { opacity: 0.8; }
+}

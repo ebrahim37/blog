@@ -1,1 +1,0 @@
-var e={list:`_list_qgwxb_1`,titleRow:`_titleRow_qgwxb_8`,cardInner:`_cardInner_qgwxb_15`,details:`_details_qgwxb_22`,period:`_period_qgwxb_29`,description:`_description_qgwxb_37`,tags:`_tags_qgwxb_44`,tag:`_tag_qgwxb_44`,card:`_card_qgwxb_15`};export{e as t};

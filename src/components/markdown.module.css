@@ -1,0 +1,71 @@
+.prose {
+	line-height: 1.7;
+	overflow-wrap: anywhere;
+	color: var(--primary);
+
+	/* first, so the rules for inline code and kbd below override its size */
+	:is(code, kbd, samp, pre) { font-family: var(--mono); font-size: 1em; }
+
+	> * + * { margin-top: 1rem; }
+	> p { color: var(--foreground); }
+	strong { font-weight: 600; }
+	small { font-size: 80%; }
+	sub, sup { position: relative; vertical-align: baseline; font-size: 75%; line-height: 0; }
+	sub { bottom: -0.25em; }
+	sup { top: -0.5em; }
+	a { color: var(--link); }
+	@media (hover: hover) { a:hover { text-decoration-line: underline; } }
+	a:active { text-decoration-line: underline; }
+	:is(h1, h2, h3, h4, h5, h6) { scroll-margin-top: 1rem; font-family: var(--mono); font-weight: 600; }
+	h1 { margin-bottom: 0; font-size: 1.8rem; line-height: inherit; }
+	h2 { font-size: 1.6rem; }
+	h3 { font-size: 1.4rem; }
+	h4 { font-size: 1.2rem; }
+	h6 { color: var(--muted-foreground); }
+	:is(ul, ol) { margin-block: 1rem; }
+	ul { padding-left: 2.375rem; list-style-type: disc; }
+	ol { padding-left: 2rem; list-style-type: decimal; }
+	li > :is(ul, ol) { margin-block: 0; }
+	li > p + p { margin-top: 0.5rem; }
+	:global(.contains-task-list) { padding-left: 1rem; list-style-type: none; }
+	:global(.task-list-item) > input { margin-inline-end: 0.5rem; vertical-align: middle; }
+	blockquote > * + * { margin-top: 0.5rem; }
+	blockquote {
+		margin-block: 1rem;
+		padding-left: 1rem;
+		border-left: 3px solid light-dark(#dedede, #444);
+		font-style: italic;
+		color: var(--muted-foreground);
+	}
+	hr { border-top-width: 1px; }
+	:is(img, video) {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin: 1rem auto;
+		border-width: 1px;
+		border-radius: 0.25rem;
+	}
+	figcaption { margin-top: 0.25rem; text-align: center; font-size: 0.85rem; color: var(--muted-foreground); }
+	table { width: 100%; margin-block: 1rem; border-collapse: collapse; font: 0.875rem/1.7 var(--sans); }
+	:is(th, td) {
+		padding: 0.625rem 1rem;
+		border-bottom-width: 1px;
+		text-align: left;
+		vertical-align: top;
+
+		&:first-child { padding-left: 0; }
+		&:last-child { padding-right: 0; }
+	}
+	th { font-weight: 600; }
+	kbd { padding-inline: 0.25rem; border-width: 1px 1px 2px; }
+	:global(.footnotes) {
+		margin-top: 2rem;
+		padding-top: 1rem;
+		border-top-width: 1px;
+		font: 0.875rem/1.25rem var(--sans);
+		color: var(--muted-foreground);
+	}
+	:not(pre) > code { padding: 0.125rem 0.25rem; background-color: var(--muted); }
+	:is(kbd, :not(pre) > code) { border-radius: 5px; font: 0.875rem/1.25rem var(--mono); }
+}

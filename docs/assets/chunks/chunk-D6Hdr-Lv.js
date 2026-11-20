@@ -1,1 +1,0 @@
-var e={card:`_card_3hddh_1`};export{e as t};

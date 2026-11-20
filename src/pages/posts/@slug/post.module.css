@@ -1,0 +1,19 @@
+.header {
+	font-family: var(--mono);
+	color: var(--primary);
+
+	/* on top of global.css */
+	h1 { margin-block: 0.5rem; padding: 1rem 0 0.5rem; line-height: 2.5rem; text-wrap: balance; }
+}
+
+/* date and reading time */
+.info {
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: var(--muted-foreground);
+	font-variant-numeric: tabular-nums;
+}
+
+.subtitle { margin-bottom: 1rem; }

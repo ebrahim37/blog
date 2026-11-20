@@ -1,22 +1,8 @@
-import { For } from 'solid-js';
-import { useConfig } from 'vike-solid/useConfig';
+import { Card, CardList } from '@/components/card.tsx';
+import { Meta } from '@/components/layout.tsx';
+import styles from './projects.module.css';
 
-import styles from './+Page.module.css';
-import { Card } from '~/components/Card.tsx';
-import { ExternalLink } from '~/components/ExternalLink.tsx';
-import { PageHeading } from '~/components/PageHeading.tsx';
-
-import { ExternalLinkIcon } from '~/components/Icons.tsx';
-
-type Project = {
-	name: string,
-	description: string,
-	period: string,
-	technologies: string[],
-	href: string,
-};
-
-const PROJECTS: Project[] = [
+const PROJECTS = [
 	{
 		name: 'infra-template',
 		description: 'Reproducible Fedora CoreOS infrastructure for three hosts, with encrypted secrets, Podman Quadlets, systemd services, and a restore path built around persistent volumes.',
@@ -101,56 +87,28 @@ const PROJECTS: Project[] = [
 		technologies: ['C++', 'Windows', 'Kernel development'],
 		href: 'https://github.com/ebrahim37/kernel-read-write-using-ioctl',
 	},
-	{
-		name: 'R6 external ESP',
-		description: 'A Direct3D overlay for Rainbow Six Siege built while learning reverse engineering, process memory, and real-time graphics.',
-		period: '2020',
-		technologies: ['C++', 'Direct3D 9', 'Reverse engineering'],
-		href: 'https://github.com/ebrahim37/R6-external-esp-v2',
-	},
-	{
-		name: 'r6-dumper',
-		description: 'An external tool for finding and exporting runtime offsets from Rainbow Six Siege after game updates.',
-		period: '2020',
-		technologies: ['C++', 'Reverse engineering'],
-		href: 'https://github.com/ebrahim37/r6-dumper',
-	},
 ];
 
-export function Page() {
-	useConfig()({
-		title: 'Projects | Ebrahim Haghshenas',
-		description: 'Selected full-stack, infrastructure, systems, and graphics projects by Ebrahim Haghshenas.',
-	});
-
-	return (
-		<>
-			<PageHeading>projects/</PageHeading>
-			<ul class={styles.list}>
-				<For each={PROJECTS}>{project =>
-					<li>
-						<ExternalLink
-							component={Card}
-							class={styles.card}
-							href={project.href}
-						>
-							<div class={styles.cardInner}>
-								<div class={styles.details}>
-									<div class={styles.titleRow}>
-										<h2>{project.name}</h2>
-										<p class={styles.period}>{project.period}</p>
-									</div>
-									<p class={styles.description}>{project.description}</p>
-									<div class={styles.tags}>
-										<For each={project.technologies}>{technology => <span class={styles.tag} translate='no'>{technology}</span>}</For>
-									</div>
-								</div>
-								<ExternalLinkIcon />
-							</div>
-						</ExternalLink>
-					</li>
-				}</For>
-			</ul>
-		</>
-	);
-}
+export default () => (
+	<>
+		<Meta
+			title='Projects'
+			description='Selected full-stack, infrastructure, systems, and graphics projects by Ebrahim Haghshenas.'
+		/>
+		<h1>projects/</h1>
+		<CardList className={styles.grid}>
+			{PROJECTS.map(project => (
+				<Card external key={project.name} href={project.href}>
+					<h2>
+						{project.name}
+						<span className={styles.year}>{project.period}</span>
+					</h2>
+					<p className={styles.description}>{project.description}</p>
+					<div className={styles.technologies} translate='no'>
+						{project.technologies.map(technology => <span key={technology}>{technology}</span>)}
+					</div>
+				</Card>
+			))}
+		</CardList>
+	</>
+);

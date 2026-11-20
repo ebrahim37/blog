@@ -5,7 +5,7 @@ timestamp: 1786060739000
 ---
 When starting a new TypeScript project, it helps to begin with the smallest possible program:
 
-```ts title='files/hello.ts'
+```ts files/hello.ts
 const a = 1; // this code block has a file name
 ```
 
@@ -62,9 +62,4 @@ For more information, read the [TypeScript documentation](https://www.example.co
 At one time, you might have believed that ~~TypeScript requires a complicated setup~~. For a basic project, only a few files are necessary.
 
 ![A placeholder image](https://placehold.co/400)
-<figcaption>
-    Placeholder caption.
-    <a href="https://placehold.co" target="_blank" rel="noreferrer">
-        source
-    </a>
-</figcaption>
+*Placeholder caption. [source](https://placehold.co)*

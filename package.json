@@ -1,24 +1,28 @@
 {
 	"type": "module",
 	"scripts": {
-		"dev": "vike dev",
+		"dev": "vite",
 		"tc": "tsc --noEmit",
-		"build": "vike build && rm -rf docs && mv dist/client docs && rm -r dist && node generate-rss.ts",
+		"build": "vite build && rm -rf docs && mv dist/client docs && rm -rf dist docs/.vite",
 		"push": "pnpm run build && git add -A && git commit -m \"update\" && git push"
 	},
 	"dependencies": {
-		"solid-js": "^1.9.15"
+		"react": "^19.3.1",
+		"react-dom": "^19.3.1"
 	},
 	"devDependencies": {
-		"@shikijs/markdown-exit": "^4.4.3",
-		"@types/node": "^26.6.2",
+		"@types/node": "^26.6.6",
+		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0",
 		"feed": "^6.0.0",
 		"gray-matter": "^4.0.3",
-		"markdown-exit": "^1.3.0",
-		"reading-time": "^1.5.0",
+		"lucide": "^1.73.0",
+		"react-markdown": "^10.1.0",
+		"rehype-raw": "^7.0.0",
+		"remark-gfm": "^4.0.1",
+		"shiki": "^4.6.0",
 		"typescript": "^7.0.2",
-		"vike": "^0.4.266",
-		"vike-solid": "^0.8.5",
-		"vite": "^8.3.0"
+		"vike": "^0.4.270",
+		"vite": "^8.3.8"
 	}
 }
