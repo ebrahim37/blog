@@ -4,6 +4,7 @@ import { Rss } from 'lucide';
 
 import { Icon } from '@/components/icon.tsx';
 import { ThemeToggle } from '@/components/theme-toggle.tsx';
+import favicon from '@/favicon.svg';
 import { router } from '@/router.ts';
 import styles from './layout.module.css';
 
@@ -43,7 +44,7 @@ export const Layout = ({ path, children }: { path: string, children: ReactNode }
 			<meta charSet='utf-8' />
 			<meta name='viewport' content='width=device-width, initial-scale=1' />
 			<meta name='theme-color' content='#ffffff' />
-			<link rel='icon' href='data:image/png;base64,iVBORw0KGgo=' />
+			<link rel='icon' href={favicon} type='image/svg+xml' />
 			<script dangerouslySetInnerHTML={{ __html: `(${awaitFonts})();(${applyTheme})();(${router})()` }} />
 			<script src='https://heartbeat.ebra.dev/api/script.js' data-site-id='a6c00916053e' defer />
 		</head>

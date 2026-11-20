@@ -18,7 +18,7 @@ export default defineConfig({
 		}
 	},
 	// minify also covers the server build, which holds the inlined router and component scripts
-	// assetsInlineLimit: every imported asset (fonts) becomes a data url, so each page is one file
+	// assetsInlineLimit: every imported asset (fonts, favicon) becomes a data url, so each page is one file
 	build: { minify: true, cssTarget, assetsInlineLimit: () => true },
 	plugins: [vike(), {
 		// after prerendering: inline each page's stylesheets as one <style>, then delete assets/, which
